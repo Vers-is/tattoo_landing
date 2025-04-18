@@ -3,7 +3,7 @@
     height: 100vh;
     padding: 5vh 10vw;
     text-transform: uppercase;
-    gap: 15vh;
+    gap: 10vh;
     display: flex;
     flex-direction: column;
 }
@@ -15,6 +15,11 @@ nav {
     width: 100%;
     height: 10vh;
     font-size: var(--medium);
+    font-weight: 300;
+}
+
+.title {
+    font-size: 70px;
 }
 
 .hero_image {
@@ -23,8 +28,31 @@ nav {
     right: 0;
     width: 50vw;
     height: 100vh;
-    background-color: rgb(61, 61, 61);
     z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.hero_image img {
+    z-index: 1;
+    width: 65%; 
+    height: auto;
+    object-fit: contain;
+}
+
+.hero_image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background: linear-gradient(to top, var(--black) 4%, transparent 97%);
+    z-index: 2; 
+    pointer-events: none; 
 }
 
 .nav_links {
@@ -33,8 +61,50 @@ nav {
 }
 
 .hero_link {
+    display: flex;
     margin-top: -2vh;
+    gap: 2vw;
     font-size: 18px;
-    transform: scaleY(1.2); 
+    font-weight: 300;
+}
 
+.start {
+    text-align: start;
+}
+
+.end {
+    text-align: end;
+}
+
+.center {
+    text-align: center;
+}
+
+.arrow_icon {
+    margin-top: -2px;
+    margin-left: -1.5vw;
+    width: 22px;
+    height: auto;
+}
+
+.logo_icon {
+    width: 40px;
+    height: auto;
+}
+
+.logo_convert {
+    display: flex;
+    gap: 10px;
+}
+
+/*      HOVER EFFECTS        */
+
+.nav_link:hover, .phone_number:hover {
+    color: var(--green);
+    transform: translateY(2px);
+    transition: all 0.3s ease-in-out;
+}
+
+.link:hover{
+    padding-left: 5px;
 }

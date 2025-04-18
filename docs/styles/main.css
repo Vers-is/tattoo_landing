@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Amatic+SC:wght@400;700&family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Patrick+Hand&family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Amatic+SC:wght@400;700&family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Monsieur+La+Doulaise&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Patrick+Hand&family=Questrial&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tangerine:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Amatic+SC:wght@400;700&family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Monsieur+La+Doulaise&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Patrick+Hand&family=Questrial&family=Tangerine:wght@400;700&display=swap');
 
 :root {
@@ -6,7 +6,7 @@
      --light-green: #B1FFB9;
     --black: #1C1C1C;
     --white: #E7E7E7;
-    --main-font: 'Questrial', sans-serif;
+    --main-font: 'Roboto', sans-serif;
     --italian-font: 'Tangerine', cursive;
     --regular: 400;
     --medium: 16px;
@@ -19,6 +19,7 @@
     padding: 0;
     text-decoration: none;
     outline: none;
+    transition: all 0.3s ease-in-out;
 }
 
 body {
@@ -49,11 +50,9 @@ a {
 
 .title {
     font-size: 64px;
-    font-weight: 500;
-    letter-spacing: 3px;
-    transform: scaleY(1.2); 
-    display: inline-block;
-    width: 50vw;
+    font-weight: 400;
+    letter-spacing: 2px;
+    width: 44vw;
 }
 
 .transparent {

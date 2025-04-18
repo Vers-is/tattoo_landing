@@ -1,0 +1,44 @@
+* {
+    /* border: solid red 1.5px; */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.about_icons {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.about_icon {
+    transform: scaleY(1.2); 
+    display: inline-block;
+    font-size: 120px;
+    color: #666;
+}
+
+.about_titles {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about_title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.about_descriptions {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.about_description {
+    max-width: 500px;
+}
