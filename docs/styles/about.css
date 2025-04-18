@@ -2,43 +2,92 @@
     /* border: solid red 1.5px; */
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+.about .title  {
+    align-self: start !important;
+    backdrop-filter: blur(10px);
 }
 
-.about_icons {
+.about {
+    height: 200vh;
     display: flex;
     flex-direction: column;
-    
+    align-items: center;
+    background-image: url('../images/blurryback.PNG');
+    /* background-size: 80%; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; 
+    z-index: 1;
+}
+
+.about::after {
+    content: "";
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    height: 20%; 
+    background: linear-gradient(to top, var(--black), transparent);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.about_title .italian {
+    font-size: 30px;
+}
+
+
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.about_row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr;
+    gap: 10vw;
+    align-items: center;
+    transition: all 0.3s ease;
+    padding: 2vh 5vw;
+    border-radius: 15px;
+    backdrop-filter: blur(4px);
 }
 
 .about_icon {
-    transform: scaleY(1.2); 
-    display: inline-block;
-    font-size: 120px;
-    color: #666;
-}
-
-.about_titles {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.about_title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.about_descriptions {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
+    font-size: 220px;
+    font-weight: 100 !important;
+    color: var(--light-green);
+    opacity: 0.2;
 }
 
 .about_description {
-    max-width: 500px;
+    font-size: 14px;
+    opacity: 0.6;
+    font-weight: 300;
+    line-height: 22px;
+    text-transform: none;
+    max-width: 30vw;
+    min-width: 20vw;
 }
+
+.about_title {
+    font-size: 20px;
+    text-transform: uppercase;
+    line-height: 27px;
+    min-width: 20vw;
+
+}
+
+/*      HOVER EFFECTS        */
+
+.about_row:hover {
+    transform: scale(1.02);
+    box-shadow: 6px 6px 35px var(--light-green);
+    z-index: 5;
+    position: relative;
+}
+
+
+

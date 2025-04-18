@@ -97,9 +97,18 @@ nav {
     gap: 10px;
 }
 
+.phone {
+    display: flex;
+    gap: 10px;
+}
+
+.phone_icon {
+    margin-top: -2px;
+}
+
 /*      HOVER EFFECTS        */
 
-.nav_link:hover, .phone_number:hover {
+.nav_link:hover {
     color: var(--green);
     transform: translateY(2px);
     transition: all 0.3s ease-in-out;
@@ -107,4 +116,9 @@ nav {
 
 .link:hover{
     padding-left: 5px;
+}
+
+.phone_number:hover {
+    color: var(--green);
+    transform: translateX(10px);
 }

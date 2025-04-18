@@ -6,12 +6,20 @@
      --light-green: #B1FFB9;
     --black: #1C1C1C;
     --white: #E7E7E7;
-    --main-font: 'Roboto', sans-serif;
+    --main-font: 'Gilroy', sans-serif;
     --italian-font: 'Tangerine', cursive;
     --regular: 400;
     --medium: 16px;
     --semibold: 600;
 }
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 * {
     box-sizing: border-box;
@@ -70,7 +78,7 @@ a {
 }
 
 section + section {
-    margin-top: 20vh;
+    margin-top: 30vh;
   }
   
 section {
