@@ -12,3 +12,28 @@
     --medium: 16px;
     --semibold: 600;
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 1px red solid;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10vh;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black);
+    overflow: hidden;
+    font-family: var(--main-font);
+    color: var(--white);
+}
+
+main {
+    margin: 2vh 5vw;
+}
