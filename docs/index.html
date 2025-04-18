@@ -83,8 +83,6 @@
             
         </section>
 
-        
-
 
         <!--            SERVICES SECTION             -->
 
@@ -94,38 +92,50 @@
                 <div class="row">
                     <div class="num">1.</div>
                     <div class="services_title">Tattoo</div>
-                    <div class="pricing" style="display: none;">from $49</div>
-                    <img class="arrow_icon" src="../docs/icons/arrow.svg" alt="">
+                    <div class="pricing">from $49</div>
+                    <img class="arrow_icon"  src="../docs/icons/grey_arrow.svg" 
+     data-grey="../docs/icons/grey_arrow.svg"
+     data-green="../docs/icons/arrow.svg" alt="">
                 </div>
                 <div class="row">
                     <div class="num">2.</div>
                     <div class="services_title">Fixing a Bad Tattoo</div>
-                    <div class="pricing" style="display: none;">from $99</div>
-                    <img class="arrow_icon" src="../docs/icons/arrow.svg" alt="">
+                    <div class="pricing">from $99</div>
+                    <img class="arrow_icon"  src="../docs/icons/grey_arrow.svg" 
+     data-grey="../docs/icons/grey_arrow.svg"
+     data-green="../docs/icons/arrow.svg" alt="">
                 </div>
                 <div class="row">
                     <div class="num">3.</div>
                     <div class="services_title">Cover up tattoo</div>
-                    <div class="pricing" style="display: none;">from $120</div>
-                    <img class="arrow_icon" src="../docs/icons/arrow.svg" alt="">
+                    <div class="pricing">from $120</div>
+                    <img class="arrow_icon"  src="../docs/icons/grey_arrow.svg" 
+     data-grey="../docs/icons/grey_arrow.svg"
+     data-green="../docs/icons/arrow.svg" alt="">
                 </div>
                 <div class="row">
                     <div class="num">4.</div>
                     <div class="services_title">Covering scars</div>
-                    <div class="pricing" style="display: none;">from $65</div>
-                    <img class="arrow_icon" src="../docs/icons/arrow.svg" alt="">
+                    <div class="pricing">from $65</div>
+                    <img class="arrow_icon"  src="../docs/icons/grey_arrow.svg" 
+     data-grey="../docs/icons/arrow.svg"
+     data-green="../docs/icons/green_arrow.svg" alt="">
                 </div>
                 <div class="row">
                     <div class="num">5.</div>
                     <div class="services_title">Permanent makeup</div>
-                    <div class="pricing" style="display: none;">from $35</div>
-                    <img class="arrow_icon" src="../docs/icons/arrow.svg" alt="">
+                    <div class="pricing">from $35</div>
+                    <img class="arrow_icon"  src="../docs/icons/grey_arrow.svg" 
+     data-grey="../docs/icons/grey_arrow.svg"
+     data-green="../docs/icons/arrow.svg" alt="">
                 </div>
                 <div class="row">
                     <div class="num">6.</div>
                     <div class="services_title">Laser removal</div>
-                    <div class="pricing" style="display: none;">from $139</div>
-                    <img class="arrow_icon" src="../docs/icons/arrow.svg" alt="">
+                    <div class="pricing">from $139</div>
+                    <img class="arrow_icon"  src="../docs/icons/grey_arrow.svg" 
+     data-grey="../docs/icons/grey_arrow.svg"
+     data-green="../docs/icons/arrow.svg" alt="">
                 </div>
             </div>
         </section>
@@ -141,7 +151,15 @@
         <!--            CONTACT SECTION             -->
 
         <section class="contact" id="contact">
-            <div class="title">ready to get tattooed?</div>
+            <div class="title">ready to<br>get tattooed?</div>
+            <div class="input_scope">
+                <input type="tel" class="input" placeholder="Phone number">
+                <div class="hint">By sending your number, you are agreeing to our Data Protection Statement.</div>
+                <div class="send_cover">
+                    <a href="" class="send_button">send</a>
+                    <img class="arrow_icon" src="../docs/icons/arrow.svg" alt="">
+                </div>
+            </div>
         </section>
 
 
@@ -184,7 +202,32 @@
             </div>
 
         </footer>
+
+        
     </main>
+    
+    <script>
+           document.addEventListener("DOMContentLoaded", () => {
+    const rows = document.querySelectorAll('.row');
+
+    rows.forEach(row => {
+        const arrow = row.querySelector('.arrow_icon');
+        if (!arrow) return; 
+
+        const grey = arrow.dataset.grey;
+        const green = arrow.dataset.green;
+
+        row.addEventListener('mouseenter', () => {
+            arrow.src = green;
+        });
+
+        row.addEventListener('mouseleave', () => {
+            arrow.src = grey;
+        });
+    });
+});
+
+        </script>
     
         
 </body>
