@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/about.css">
-    <link rel="stylesheet" href="./styles/artist.css">
+    <link rel="stylesheet" href="./styles/artists.css">
     <link rel="stylesheet" href="./styles/contact.css">
     <link rel="stylesheet" href="./styles/faq.css">
     <link rel="stylesheet" href="./styles/services.css">
@@ -17,55 +18,87 @@
 
     <main>
             <!--            HERO SECTION             -->
-        <section class="hero">
+        <section class="hero" id="hero">
             <nav>
-                <div class="logo">---</div>
-                <div class="nav_link">
-                    <div class="nav_links">we are</div>
-                    <div class="nav_links">artists</div>
-                    <div class="nav_links">services</div>
-                    <div class="nav_links">faq</div>
+                <a href="#hero" class="logo">bona<br>tattoo</a>
+                
+                <div class="nav_links">
+                    <a href="#about" class="nav_link">we are</a>
+                    <a href="#services" class="nav_link">services</a>
+                    <a href="#artists" class="nav_link">artists</a>
+                    <a href="#faq" class="nav_link">faq</a>
                 </div>
-                <div class="phone_number">202 555 0104</div>
+
+                <a href="" class="phone_number">202 555 0104</a>
             </nav>
 
             <div class="title">
-                your tattoo is about you! let us make it uniquely yours
+                your tattoo is<br><span class="transparent">----</span>about <span class="italian">you!</span> <br>let us make it<br><span class="transparent">-----</span><span class="italian">uniquely</span> yours
             </div>
 
-            <a href="" class="hero_link">press to  book an appointment</a>
+            <a href="" class="hero_link">
+                press to
+                <span class="transparent">-----</span> 
+                <span class="green">
+                  book an appointment
+                  <i class="icon_arrow-down"></i>
+                </span>
+              </a>
+              
+            <div class="hero_image"></div>
 
         </section>
 
 
         <!--            ABOUT SECCTION             -->
-        <section class="about">
-
+        <section class="about" id="about">
+            <div class="title">we are...</div>
+            <div class="grid-container">
+                <div class="row">
+                    <div class="about_icon">1.</div>
+                    <div class="about_title"></div>
+                    <div class="about_description"></div>
+                </div>
+                <div class="row">
+                    <div class="about_icon">2.</div>
+                    <div class="about_title"></div>
+                    <div class="about_description"></div>
+                </div>
+                <div class="row">
+                    <div class="about_icon">3.</div>
+                    <div class="about_title"></div>
+                    <div class="about_description"></div>
+                </div>
+            </div>
         </section>
 
 
         <!--            SERVICES SECTION             -->
 
-        <section class="services">
-
+        <section class="services" id="services">
+            <div class="title">services</div>
         </section>
 
 
         <!--            ARTIST SECTION             -->
 
-        <section class="artist">
-            
+        <section class="artists" id="artists">
+            <div class="title">artists</div>
         </section>
 
 
         <!--            CONTACT SECTION             -->
 
-        <section class="contact"></section>
+        <section class="contact" id="contact">
+            <div class="title">ready to get tattooed?</div>
+        </section>
 
 
         <!--            FAQ SECTION             -->
 
-        <section class="faq"></section>
+        <section class="faq" id="faq">
+            <div class="title">faq</div>
+        </section>
 
 
         <!--            FOOTER SECTION             -->

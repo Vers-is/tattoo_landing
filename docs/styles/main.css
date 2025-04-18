@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Amatic+SC:wght@400;700&family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Patrick+Hand&family=Questrial&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Amatic+SC:wght@400;700&family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Monsieur+La+Doulaise&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Patrick+Hand&family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Amatic+SC:wght@400;700&family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Monsieur+La+Doulaise&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Patrick+Hand&family=Questrial&family=Tangerine:wght@400;700&display=swap');
 
 :root {
     --green: #82EE8D;
-    --light-green: #B1FFB9;
+     --light-green: #B1FFB9;
     --black: #1C1C1C;
     --white: #E7E7E7;
     --main-font: 'Questrial', sans-serif;
-    --italian-font: 'Monsieur La Doulaise', cursive;
+    --italian-font: 'Tangerine', cursive;
     --regular: 400;
     --medium: 16px;
     --semibold: 600;
@@ -17,7 +17,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border: 1px red solid;
+    text-decoration: none;
+    outline: none;
 }
 
 body {
@@ -25,15 +26,60 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10vh;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: var(--black);
-    overflow: hidden;
+    overflow-x: hidden;
     font-family: var(--main-font);
     color: var(--white);
 }
 
-main {
-    margin: 2vh 5vw;
+body::-webkit-scrollbar {
+    display: none;
 }
+  
+main {
+    width: 100vw;
+    height: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+.title {
+    font-size: 64px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    transform: scaleY(1.2); 
+    display: inline-block;
+    width: 50vw;
+}
+
+.transparent {
+    color: transparent;
+}
+
+.italian {
+    font-family: var(--italian-font);
+    color: var(--light-green);
+    text-transform: none;
+}
+
+.green {
+    color: var(--green);
+}
+
+section + section {
+    margin-top: 20vh;
+  }
+  
+section {
+    width: 100vw;
+    height: 100vh;
+    padding: 5vh 10vw;
+    text-transform: uppercase;
+    gap: 15vh;
+    display: flex;
+    flex-direction: column;
+}    
