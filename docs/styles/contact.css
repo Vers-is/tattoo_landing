@@ -1,5 +1,5 @@
 .contact {
-    height: 50vw;
+    height: 50vw !important;
     display: flex;
     justify-content: space-between;
     flex-direction: row;

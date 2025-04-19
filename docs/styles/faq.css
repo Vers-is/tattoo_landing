@@ -1,0 +1,116 @@
+
+.faq {
+    margin-top: -25vh;
+    height: 140vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.faq {
+    background-image: url('../images/blurryback.PNG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; 
+    z-index: 1;
+}
+
+
+.faq::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 20%; 
+    background: linear-gradient(to bottom, var(--black), transparent);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.faq::after {
+    content: "";
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    height: 20%; 
+    background: linear-gradient(to top, var(--black), transparent);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.questions {
+    width: 100vw;
+
+}
+
+.faq .title {
+    align-self: start;
+    margin-bottom: -5vh;
+
+}
+
+.question_cover {
+    text-transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+    padding: 1vh 10vw;
+    border-top: 1px solid rgba(128, 128, 128, 0.418);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.418);
+}
+
+.show_more {
+    cursor: pointer;
+}
+
+.show_more_cover {
+    text-transform: uppercase;
+    margin-top: 5vh;
+    margin-left: 45%;
+    color: var(--green);
+    display: flex;
+    gap: 5px;
+    font-size: 18px;
+}
+
+.questions .icon {
+    font-size: 62px;
+}
+
+.down_icon {
+    transform: scale(1.2);
+}
+
+/*         HOVER EFFECT      */
+
+.question_cover:hover .icon {
+    color: var(--green);
+    transform: rotate(45deg);
+
+}
+
+.question_cover:hover .question {
+    color: var(--green);
+}
+
+.show_more_cover:hover .show_more{
+    transform: scale(1.1);
+}
+
+.show_more_cover:hover .down_icon {
+    transform: rotate(-90deg);
+}
+
+/* .question_cover:hover .arrow_icon {
+    transform: rotate(-90deg);
+}
+
+.question_cover:hover .pricing {
+    opacity: 1;
+    visibility: visible;
+} */
