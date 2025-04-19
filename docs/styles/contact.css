@@ -55,3 +55,15 @@ input::placeholder, .hint {
 .send_cover:hover {
     padding-left: 10px;
 }
+
+
+.error-message {
+    color: rgb(202, 0, 0);
+    font-size: 10px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+  .error-message.visible  {
+    opacity: 1;
+  }
+  

@@ -153,10 +153,11 @@
         <section class="contact" id="contact">
             <div class="title">ready to<br>get tattooed?</div>
             <div class="input_scope">
-                <input type="tel" class="input" placeholder="Phone number">
+                <input type="tel" id="phoneInput" class="input" placeholder="Phone number">
+                <div id="phoneError" class="error-message"></div>
                 <div class="hint">By sending your number, you are agreeing to our Data Protection Statement.</div>
                 <div class="send_cover">
-                    <a href="" class="send_button">send</a>
+                    <a href="" class="send_button" id="sendButton">send</a>
                     <img class="arrow_icon" src="../docs/icons/arrow.svg" alt="">
                 </div>
             </div>
@@ -293,6 +294,26 @@ const showMoreBtn = document.querySelector('.show_more_cover');
   // по умолчанию скрываем дополнительные вопросы
   extraQuestions.forEach(q => {
     q.style.display = 'none';
+  });
+
+  const phoneInput = document.getElementById("phoneInput");
+  const sendButton = document.getElementById("sendButton");
+  const phoneError = document.getElementById("phoneError");
+
+  sendButton.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const phoneValue = phoneInput.value.trim();
+    const phoneRegex = /^\+?\d{10,15}$/;
+
+    if (phoneRegex.test(phoneValue)) {
+      phoneError.textContent = "";
+      phoneError.classList.remove("visible");
+      // Здесь можешь продолжить обработку, отправку данных и т.п.
+    } else {
+      phoneError.textContent = "Please enter a valid phone number.";
+      phoneError.classList.add("visible");
+    }
   });
 
         </script>
