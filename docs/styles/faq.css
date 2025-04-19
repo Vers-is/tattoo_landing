@@ -59,7 +59,7 @@
     align-items: center;
     justify-content: space-between;
     font-size: 24px;
-    padding: 1vh 10vw;
+    padding: 2vh 10vw;
     border-top: 1px solid rgba(128, 128, 128, 0.418);
     border-bottom: 1px solid rgba(128, 128, 128, 0.418);
 }
@@ -114,3 +114,56 @@
     opacity: 1;
     visibility: visible;
 } */
+
+
+.answer {
+    height: 50%;
+    z-index: 3;
+    width: 100vw;
+    position: absolute;
+    top: 10vh;
+    left: -4px;
+    padding: 1vh 10vw;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.418);
+    background: linear-gradient(to top, var(--black), transparent);
+    backdrop-filter: blur(50px);
+}
+
+/* обёртка должна быть position: relative, чтобы позиционировать ответ */
+.question_cover {
+    position: relative;
+    cursor: pointer;
+    /* ...ваши текущие стили (flex, padding, бордеры) */
+  }
+  
+  /* по умолчанию скрываем .answer */
+  .question_cover .answer {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 10vw;        /* горизонтальные отступы по вкусу */
+    transition: 
+      opacity 0.3s ease, 
+      max-height 0.3s ease, 
+      padding 0.3s ease;
+    color: #646A69;         /* цвет текста ответа */
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* при наведении показываем */
+  .question_cover:hover .answer {
+    opacity: 1;
+    max-height: 200px;      /* или auto, если точная высота не важна */
+    padding: 1vh 10vw;      /* добавить вертикальные отступы */
+  }
+  
+  /* иконка крутим, вопрос меняет цвет */
+  .question_cover:hover .icon {
+    transform: rotate(45deg);
+    color: var(--green);
+  }
+  .question_cover:hover .question {
+    color: var(--green);
+  }
+  
