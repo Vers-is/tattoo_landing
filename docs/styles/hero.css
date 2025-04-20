@@ -106,7 +106,8 @@ nav {
     margin-top: -2px;
 }
 
-/*      HOVER EFFECTS        */
+/* ======  HOVER EFFECTS ====== */
+
 
 .nav_link:hover {
     color: var(--green);

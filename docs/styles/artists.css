@@ -1,15 +1,32 @@
+.cards_cover {
+    width: 100vw;
+    position: relative; 
+    display: flex;
+    position: relative;
+}
+
+.card {
+    padding: 3vh 2vw;
+    border: transparent 1.5px solid;
+    min-height: 50vh;
+    width: 23vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .artists .title {
     margin-bottom: -5vh;
 }
 
-
 .gallery_cover {
     display: flex;
     gap: 30px;
-    padding-top: 3vh;
+    padding-top: 5vh;
+    color: var(--green);
 }
 
-.gallery{
+.gallery {
     font-size: 18px;
     color: var(--green);
 }
@@ -22,7 +39,6 @@
 
 .artist_name, .gallery_cover {
     text-transform: uppercase;
-
 }
 
 .subtitle_text {
@@ -36,39 +52,6 @@
     text-transform: none;
 }
 
-.wrapper {
-    width: 100vw;
-    position: relative; 
-}
-
-.cards_cover {
-    display: flex;
-    /* gap: 2vw; */
-    position: relative;
-}
-
-/* .cards_cover::after {
-    background: linear-gradient(to left, var(--black) 40%, transparent 100%);
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 20vw;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-} */
-
-.card {
-    padding: 3vh 2vw;
-    border: transparent 1.5px solid;
-    min-height: 50vh;
-    width: 23vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
 .artist_image {
     width: 100%;
     height: auto;
@@ -76,19 +59,12 @@
 }
 
 
-.gallery_cover {
-    margin-top: 2vh;
-    color: var(--green);
-}
-
-/*  ---     hover   --- */
+/* ======  HOVER EFFECTS ====== */
 
 
 .gallery_cover:hover {
     padding-left: 10px;
 }
-
-
 
 .card:hover {
     transform: scale(1.02);

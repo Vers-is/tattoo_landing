@@ -1,7 +1,3 @@
-/* * {
-    border: 1px solid rgba(255, 255, 255, 0.409);
-} */
-
 .footer {
     height: 50vh;
     background-color: #171717;
@@ -20,9 +16,6 @@ footer .logo{
 
 footer .logo_convert {
     min-height: 80%;
-    /* display: flex;
-    align-self: start;
-    justify-self: center; */
 }
 
 footer .logo_icon{
@@ -58,7 +51,8 @@ footer .logo_icon{
     height: auto;
 }
 
-/*      HOVER   EFFECTS      */
+/* ======  HOVER EFFECTS ====== */
+
 
 .footer_link:hover {
     opacity: 1;

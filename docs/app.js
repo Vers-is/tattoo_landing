@@ -1,6 +1,8 @@
-
-           document.addEventListener("DOMContentLoaded", () => {
-    const rows = document.querySelectorAll('.row');
+ // ==== GREY-TO-GREEN_ARROW: makes arrow on _services_
+ // ==== section green if the mouse on the service row.
+ // ==== and also again gray if mause was waped away
+document.addEventListener("DOMContentLoaded", () => {
+const rows = document.querySelectorAll('.row');
 
     rows.forEach(row => {
         const arrow = row.querySelector('.arrow_icon');
@@ -19,11 +21,14 @@
     });
 });
 
-const showMoreBtn = document.querySelector('.show_more_cover');
-  const extraQuestions = document.querySelectorAll('.question_cover.extra');
-  let isExpanded = false;
 
-  showMoreBtn.addEventListener('click', () => {
+// ==== SHOW-MORE_BUTTON: show some more questions on click
+// ==== and also shows less when button clicked second time
+const showMoreBtn = document.querySelector('.show_more_cover');
+const extraQuestions = document.querySelectorAll('.question_cover.extra');
+let isExpanded = false;
+
+showMoreBtn.addEventListener('click', () => {
     isExpanded = !isExpanded;
     extraQuestions.forEach(q => {
       q.style.display = isExpanded ? 'flex' : 'none';
@@ -34,13 +39,13 @@ const showMoreBtn = document.querySelector('.show_more_cover');
 
     label.textContent = isExpanded ? 'show less' : 'show more';
     icon.style.transform = isExpanded ? 'rotate(90deg)' : 'rotate(0deg)';
-  });
-
-  // по умолчанию скрываем дополнительные вопросы
+});
   extraQuestions.forEach(q => {
     q.style.display = 'none';
   });
 
+
+// ==== PHONE_NUMBER_VALIDATION: on _contact_ section.
   const phoneInput = document.getElementById("phoneInput");
   const sendButton = document.getElementById("sendButton");
   const phoneError = document.getElementById("phoneError");
@@ -54,7 +59,6 @@ const showMoreBtn = document.querySelector('.show_more_cover');
     if (phoneRegex.test(phoneValue)) {
       phoneError.textContent = "";
       phoneError.classList.remove("visible");
-      // Здесь можешь продолжить обработку, отправку данных и т.п.
     } else {
       phoneError.textContent = "Please enter a valid phone number.";
       phoneError.classList.add("visible");

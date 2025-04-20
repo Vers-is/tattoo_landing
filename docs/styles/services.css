@@ -12,8 +12,7 @@
     width: 50%;
     text-transform: none;
     gap: 2vh;
-    display: flex;
-    
+    display: flex; 
 }
 
 .num, .services_title  {
@@ -35,7 +34,19 @@
     margin-left: 10vw;
 }
 
-/*         HOVER EFFECT      */
+.pricing {
+    position: absolute;
+    top: 7.5vh;
+    left: 11.5vw;
+    font-size: 18px;
+    color: var(--white);
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* ======  HOVER EFFECTS ====== */
+
 
 .row:hover .num {
     color: var(--white);
@@ -54,12 +65,3 @@
     visibility: visible;
 }
 
-.pricing {
-    position: absolute;
-    top: 7.5vh;
-    left: 11.5vw;
-    font-size: 18px;
-    color: var(--white);
-    opacity: 0;
-    visibility: hidden;
-}
