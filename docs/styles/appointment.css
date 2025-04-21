@@ -1,3 +1,4 @@
+
 body {
     padding: 5vh 5vw;
 }
@@ -30,7 +31,6 @@ body {
 
 main {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     flex-direction: row;
     gap: 10vw;
@@ -56,6 +56,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 2vh;
+    position: relative;
 }
 
 input, select {
@@ -120,7 +121,9 @@ option {
     color: gray;
     font-family: sans-serif;
     justify-content: center;
-    margin-left: -8vw;
+    position: absolute;
+    top: 35%;
+    left: -50%;
   }
 
 .weekday {
