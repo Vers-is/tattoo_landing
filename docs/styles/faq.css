@@ -90,7 +90,7 @@
     top: 10vh;
     left: -4px;
     padding: 1vh 10vw;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.418);
+    border-bottom: 1px solid rgba(225, 225, 225, 0.418);
     background: linear-gradient(to top, var(--black), transparent);
     backdrop-filter: blur(50px);
 }
@@ -150,3 +150,6 @@
     color: var(--green);
 }
   
+.s {
+    color: rgb(62, 62, 141);
+}
