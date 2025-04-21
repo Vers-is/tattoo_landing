@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('../images/blurryback.PNG');
+    background-image: url('/docs/images/blurryback.PNG');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
