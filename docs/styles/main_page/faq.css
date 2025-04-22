@@ -56,7 +56,7 @@
     justify-content: space-between;
     font-size: 24px;
     padding: 2vh 10vw;
-    border-top: 1px solid rgba(128, 128, 128, 0.418);
+    border-top: 1px solid rgb(53, 53, 117);
     border-bottom: 1px solid rgba(128, 128, 128, 0.418);
 }
 
@@ -149,7 +149,5 @@
 .question_cover:hover .question {
     color: var(--green);
 }
-  
-.s {
-    color: rgb(62, 62, 141);
-}
+
+
