@@ -3,12 +3,6 @@ body {
     overflow: hidden;
 }
 
-.artist_description {
-    
-}
-
-/* ========== FLEX LAYOUT ========== */
-
 .flex_container {
     display: flex;
     gap: 10vw;
@@ -23,7 +17,6 @@ body {
     margin-left: -10%;
 }
 
-/* ————— РАЗМЕЩЕНИЕ ПРАВОЙ КОЛОНКИ ———— */
 .right_container {
     display: flex;
     flex-direction: column;
@@ -31,8 +24,6 @@ body {
     max-width: 20vw;
     font-size: 14px;
 }
-
-/* ========== TEXT STYLES ========== */
 
 .title {
     font-size: 40px;
@@ -67,16 +58,12 @@ body {
     font-size: 24px;
 }
 
-/* ========== IMAGE ========== */
-
 .artist_photo {
     width: 100%;
     max-width: 250px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
 }
-
-/* ========== GALLERY ========== */
 
 .gallery_cover {
     display: flex;
@@ -90,12 +77,6 @@ body {
     object-fit: cover;
     transition: transform 0.3s ease;
 }
-
-.gallery_image:hover {
-    transform: scale(1.1) rotate(5deg);
-}
-
-/* ========== INPUTS & ERRORS ========== */
 
 input::placeholder,
 .hint {
@@ -124,7 +105,13 @@ input {
     opacity: 1;
 }
 
-/* ========== LINKS ========== */
+.green {
+    color: var(--green);
+}
+
+.grey {
+    color: gray;
+}
 
 .link_cover {
     align-self: flex-start;
@@ -133,13 +120,13 @@ input {
     margin-top: 2vh;
 }
 
-.link_cover:hover {
-    padding-left: 20px;
-}
-
 .back {
     transform: rotate(135deg);
 }
+
+
+/* ====  HOVER EFFECT ==== */
+
 
 .gallery_cover:has(.gallery_image:hover) .gallery_image {
     filter: blur(3px);
@@ -151,13 +138,11 @@ input {
     z-index: 6;
 }
 
-
-/* ========== COLORS ========== */
-
-.green {
-    color: var(--green);
+.link_cover:hover {
+    padding-left: 20px;
 }
 
-.grey {
-    color: gray;
+.gallery_image:hover {
+    transform: scale(1.1) rotate(5deg);
 }
+
