@@ -10,17 +10,19 @@
 </head>
 <body>
     <div class="link_cover">
-        <img class="arrow_icon back" src="/docs/icons/arrow.svg" alt="">
+        <img class="arrow_icon back" src="/docs/icons/grey_arrow.svg" alt="">
         <a href="/docs/index.html" class="link grey">back</a>
     </div>
     <div class="flex_container">
         <div class="left_container">
-            <img src="" alt="" class="artist_photo">
-            <div class="name"></div>
-            <div class="description"></div>
+            <img src="/docs/images/artists/kevin.JPG" alt="" class="artist_photo">
+            <div class="artist_description">
+                <div class="name">kevin</div>
+                <div class="description">Specializes in colorful illustrative designs.</div>
+            </div>
         </div>
         <div class="right_container">
-            <div class="title ">book an appointment to an artist</div>
+            <div class="second_title">book an appointment to an artist</div>
             <input type="text" placeholder="Phone number" id="phoneInput">
             <div id="phoneError" class="error-message"></div>
             <div class="hint">By sending this data you are agreeing to our Data Pritection Statement</div>
@@ -31,7 +33,37 @@
         </div>
     </div> 
 
-    <div class="title">galley</div>
+    <div class="title">gallery</div>
+
+    <div class="gallery_cover">
+        <img src="/docs/images/tattoo/kevin/image_kevin_1.jpg" alt="" class="gallery_image">
+        <img src="/docs/images/tattoo/kevin/image_kevin_2.jpg" alt="" class="gallery_image">
+        <img src="/docs/images/tattoo/kevin/image_kevin_3.jpg" alt="" class="gallery_image">
+        <img src="/docs/images/tattoo/kevin/image_kevin_4.jpg" alt="" class="gallery_image">
+        <img src="/docs/images/tattoo/kevin/image_kevin_5.jpg" alt="" class="gallery_image">
+    </div>
+
+    <script>
+        // ==== PHONE NUMBER VALIDATION
+        const phoneInput = document.getElementById("phoneInput");
+        const sendButton = document.getElementById("book");
+        const phoneError = document.getElementById("phoneError");
+
+        sendButton.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const phoneValue = phoneInput.value.trim();
+            const phoneRegex = /^\+?\d{10,15}$/;
+
+            if (phoneRegex.test(phoneValue)) {
+            phoneError.textContent = "";
+            phoneError.classList.remove("visible");
+            } else {
+            phoneError.textContent = "Please enter a valid phone number.";
+            phoneError.classList.add("visible");
+            }
+        });
+    </script>
     
 </body>
 </html>

@@ -1,0 +1,163 @@
+body {
+    padding: 5vh 5vw;
+    overflow: hidden;
+}
+
+.artist_description {
+    
+}
+
+/* ========== FLEX LAYOUT ========== */
+
+.flex_container {
+    display: flex;
+    gap: 10vw;
+    margin-top: 5vh;
+}
+
+.left_container {
+    display: flex;
+    align-items: flex-start;
+    gap: 3vh;
+    width: 35vw;
+    margin-left: -10%;
+}
+
+/* ————— РАЗМЕЩЕНИЕ ПРАВОЙ КОЛОНКИ ———— */
+.right_container {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    max-width: 20vw;
+    font-size: 14px;
+}
+
+/* ========== TEXT STYLES ========== */
+
+.title {
+    font-size: 40px;
+    margin-top: 7vh;
+    margin-bottom: 5vh;
+    text-transform: uppercase;
+    margin-left: -40%;
+}
+
+.name {
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.description {
+    font-size: 16px;
+    margin-top: 1vh;
+}
+
+.second_title {
+    font-size: 24px;
+    width: 30vw;
+    margin-bottom: 2vh;
+}
+
+.title, .link, .second_title{
+    text-transform: uppercase;
+}
+
+.link {
+    font-size: 24px;
+}
+
+/* ========== IMAGE ========== */
+
+.artist_photo {
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+/* ========== GALLERY ========== */
+
+.gallery_cover {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+.gallery_image {
+    width: calc(10vw - 10px);
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery_image:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* ========== INPUTS & ERRORS ========== */
+
+input::placeholder,
+.hint {
+    color: grey;
+}
+
+input {
+    width: 30vw;
+    color: white;
+    padding: 10px 0;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--white);
+    outline: none;
+}
+
+.error-message {
+    color: rgb(202, 0, 0);
+    font-size: 10px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.error-message.visible {
+    opacity: 1;
+}
+
+/* ========== LINKS ========== */
+
+.link_cover {
+    align-self: flex-start;
+    display: flex;
+    gap: 15px;
+    margin-top: 2vh;
+}
+
+.link_cover:hover {
+    padding-left: 20px;
+}
+
+.back {
+    transform: rotate(135deg);
+}
+
+.gallery_cover:has(.gallery_image:hover) .gallery_image {
+    filter: blur(3px);
+}
+
+.gallery_image:hover {
+    filter: none !important;
+    transform: scale(2) rotate(5deg) translateY(-50px);
+    z-index: 6;
+}
+
+
+/* ========== COLORS ========== */
+
+.green {
+    color: var(--green);
+}
+
+.grey {
+    color: gray;
+}
