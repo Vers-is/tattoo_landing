@@ -1,18 +1,21 @@
 .cards_cover {
-    width: 100vw;
+    /* gap: 2vw; */
     position: relative; 
     display: flex;
     position: relative;
+    justify-content: center;
+    width: fit-content;
 }
 
 .card {
-    padding: 3vh 2vw;
+    padding: 5vh 2vw;
     border: transparent 1.5px solid;
     min-height: 50vh;
-    width: 23vw;
+    width: 22vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 30px;
 }
 
 .artists .title {
@@ -44,12 +47,15 @@
 .subtitle_text {
     display: flex;
     margin-top: 2vh;
+    opacity: 0.6;
+    font-size: 14px !important;
+    text-transform: none;
 }
 
-.subtitle_title, .subtitle_text{
-    opacity: 0.6;
-    font-size: 16px;
+.subtitle_title {
     text-transform: none;
+    font-size: 16px;
+    color: var(--white) !important;
 }
 
 .artist_image {
@@ -66,12 +72,15 @@
     padding-left: 10px;
 }
 
+.cards_cover:has(.card:hover) .card {
+    filter: blur(3px);
+}
+
 .card:hover {
-    transform: scale(1.02);
-    padding: 3vh 2vw;
-    border: var(--white) 1.5px solid;
-    border-radius: 30px;
-    box-shadow: 2px 2px 2px var(--light-green);
-    z-index: 5;
-    position: relative;
+    filter: none !important;
+    transform:translateY(-30px);
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3), -15px -15px 30px rgba(0, 0, 0, 0.2);
+    border-right: 1.5px var(--green) solid;
+    border-bottom: 1.5px var(--green) solid;
+    z-index: 6;
 }

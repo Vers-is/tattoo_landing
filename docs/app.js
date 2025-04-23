@@ -63,4 +63,91 @@ showMoreBtn.addEventListener('click', () => {
       phoneError.textContent = "Please enter a valid phone number.";
       phoneError.classList.add("visible");
     }
+});
+
+
+window.addEventListener('scroll', function() {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 0) {
+      nav.classList.add('scrolled'); // Добавляем класс при скролле
+  } else {
+      nav.classList.remove('scrolled'); // Убираем класс, если на верхней части страницы
+  }
+});
+
+
+// ==== LOGO:HOVER: video show
+const logo = document.querySelector('.logo_convert');
+const videoOverlay = document.querySelector('.tattoo-video-overlay');
+
+logo.addEventListener('mouseover', () => {
+videoOverlay.style.opacity = '1';
+videoOverlay.style.pointerEvents = 'auto';
+});
+
+logo.addEventListener('mouseout', () => {
+videoOverlay.style.opacity = '0';
+videoOverlay.style.pointerEvents = 'none';
+});
+
+
+// ==== line animation
+
+const aboutRow = document.querySelector('.about_row');
+const borderPath = document.querySelector('.border-path');
+
+function getPerimeter(element) {
+    const rect = element.getBoundingClientRect();
+    return 2 * (rect.width + rect.height); 
+}
+
+anime({
+    targets: borderPath,
+    strokeDasharray: getPerimeter(aboutRow), 
+    strokeDashoffset: [anime.setDashoffset, 0], 
+    duration: 10000, 
+    loop: true,
+    easing: 'linear', 
+});
+
+// ==== PHONE NUMBER VALIDATION
+// const phoneInput = document.getElementById("phoneInput");
+// const sendButton = document.getElementById("book");
+// const phoneError = document.getElementById("phoneError");
+
+sendButton.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const phoneValue = phoneInput.value.trim();
+    const phoneRegex = /^\+?\d{10,15}$/;
+
+    if (phoneRegex.test(phoneValue)) {
+    phoneError.textContent = "";
+    phoneError.classList.remove("visible");
+    } else {
+    phoneError.textContent = "Please enter a valid phone number.";
+    phoneError.classList.add("visible");
+    }
+});
+
+// =====================================
+document.addEventListener('DOMContentLoaded', () => {
+  const artistInfo = document.querySelector('.artist_info');
+  const bookCover = document.querySelector('.book_cover');
+
+// ==== smooth link's disappearing
+  artistInfo.addEventListener('mouseenter', () => {
+      bookCover.style.opacity = '1';
+      bookCover.style.visibility = 'visible';
   });
+
+  artistInfo.addEventListener('mouseleave', () => {
+      bookCover.style.transition = 'none';
+      bookCover.style.opacity = '0';
+      bookCover.style.visibility = 'hidden';
+      
+      requestAnimationFrame(() => {
+          bookCover.style.transition = '';
+      });
+  });
+});

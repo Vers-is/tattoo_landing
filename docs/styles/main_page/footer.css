@@ -55,5 +55,6 @@ footer .logo_icon{
 
 
 .footer_link:hover {
+    transition: .2s;
     opacity: 1;
 }

@@ -1,56 +1,35 @@
 body {
     padding: 5vh 5vw;
     overflow: hidden;
-}
-
-.flex_container {
-    display: flex;
-    gap: 10vw;
-    margin-top: 5vh;
-}
-
-.left_container {
-    display: flex;
-    align-items: flex-start;
-    gap: 3vh;
-    width: 35vw;
-    margin-left: -10%;
-}
-
-.right_container {
-    display: flex;
-    flex-direction: column;
-    gap: 2vh;
-    max-width: 20vw;
-    font-size: 14px;
+    background: url('/docs/images/blurryback.PNG') no-repeat center/cover;
+    background-color: var(--black);
 }
 
 .title {
     font-size: 40px;
-    margin-top: 7vh;
-    margin-bottom: 5vh;
+    width: 5vw;
     text-transform: uppercase;
-    margin-left: -40%;
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+    margin-left: -30%;
+    background-color: rgba(129, 129, 129, 0.08);
+    padding: 5vh 5vw;
+    transition: .3s;
 }
 
-.name {
-    font-size: 40px;
-    font-weight: 600;
-    text-transform: uppercase;
+
+.link_cover {
+    transition: all .3s;
+    align-self: start;
+    display: flex;
+    gap: 5px;
 }
 
-.description {
-    font-size: 16px;
-    margin-top: 1vh;
+.back {
+    transform: rotate(135deg);
 }
 
-.second_title {
-    font-size: 24px;
-    width: 30vw;
-    margin-bottom: 2vh;
-}
-
-.title, .link, .second_title{
+.title, .link {
     text-transform: uppercase;
 }
 
@@ -58,91 +37,177 @@ body {
     font-size: 24px;
 }
 
+.book_cover {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(0);
+    transition: 
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    position: absolute;
+    padding-top: 20px;
+    color: #69be71;
+    top: 85%;
+    align-self: start;
+    display: flex;
+    gap: 5px;
+    left: 55%;
+}
+
+.artist_info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    background-color: #69be71;
+    padding: 2vh 2vw;
+    height: 20%;
+    width: 30%;
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.537), -15px -15px 30px rgba(0, 0, 0, 0.393);
+}
+
+.description {
+    font-size: 18px;
+}
+
+
 .artist_photo {
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    margin-bottom: 10vh;
+}
+
+.info_cover {
+    text-align: end;
+    gap: 30px;
+    transition: transform 0.3s ease;
+}
+
+.name {
+    text-transform: uppercase;
+    color: var(--black);
+    font-weight: 800;
+    font-size: 32px;
 }
 
 .gallery_cover {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2vw;
+    gap: 20px;
+    margin-left: -8vw;
 }
 
 .gallery_image {
-    width: calc(10vw - 10px);
-    height: 200px;
+    width: calc(17vw - 10px);
+    height: 350px;
     object-fit: cover;
     transition: transform 0.3s ease;
+    border-bottom: solid 1.5px var(--green);
+    border-top: solid 1.5px var(--green);
 }
 
-input::placeholder,
-.hint {
-    color: grey;
+.gallery_container {
+    align-items: center;
+    margin-top: 20vh;
+    gap: 10vw;
+    display: flex;
+    width: 70%;
 }
 
-input {
-    width: 30vw;
-    color: white;
-    padding: 10px 0;
-    font-size: 18px;
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid var(--white);
-    outline: none;
-}
-
-.error-message {
-    color: rgb(202, 0, 0);
-    font-size: 10px;
-    transition: opacity 0.3s ease;
-    opacity: 0;
-}
-
-.error-message.visible {
-    opacity: 1;
-}
-
-.green {
-    color: var(--green);
+.pricing {
+    color: #808080;
+   margin-top: 10px;
+   font-size: 18px;
 }
 
 .grey {
-    color: gray;
+    color: grey;
 }
-
-.link_cover {
-    align-self: flex-start;
-    display: flex;
-    gap: 15px;
-    margin-top: 2vh;
-}
-
-.back {
-    transform: rotate(135deg);
-}
-
 
 /* ====  HOVER EFFECT ==== */
 
 
 .gallery_cover:has(.gallery_image:hover) .gallery_image {
-    filter: blur(3px);
+    filter: blur(3px) brightness(.5);
 }
 
 .gallery_image:hover {
     filter: none !important;
-    transform: scale(2) rotate(5deg) translateY(-50px);
-    z-index: 6;
+    top: 0;
+    left: 0;
+    transform: scale(1.5) rotate(-2deg) translateY(-30px);
+    z-index: 500 !important; 
+    position: relative;
+    filter: brightness(1.7);
+    padding: 10px 0;
+    border-width: 5px;
+
 }
 
 .link_cover:hover {
+    transition: .3s;
     padding-left: 20px;
 }
 
-.gallery_image:hover {
-    transform: scale(1.1) rotate(5deg);
+body > *:not(.artist_info) {
+    transition: filter 0.3s ease;
+  }
+  .artist_info:hover ~ *,
+  .artist_info:hover ~ * ~ * {
+    filter: brightness(0.3);
+  }
+  
+.gallery_container:has(.gallery_image:hover) .title,
+.gallery_container:has(.gallery_image:hover) .pricing{
+    filter: brightness(0.3);
+}
+  
+.title:hover {
+    box-shadow: inset 15px 15px 30px black;
+    background-color: var(--black);
 }
 
+.book_cover:hover {
+    transform: translateX(-20px);
+}
+  
+.artist_info:hover .book_cover {
+    visibility: visible;
+    opacity: 1;
+    transition: 
+    opacity 0.3s ease 0.1s, 
+    transform 0.3s ease;
+}
+  
+.artist_info:not(:hover) .book_cover {
+    transition: 
+      opacity 0s linear,
+      visibility 0s linear 0s,
+      transform 0s linear;
+}
+
+.artist_info:hover{
+    height: 80%;
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.854), -15px -15px 30px rgba(0, 0, 0, 0.735);
+    padding-bottom: 7vh;
+    z-index: 20;
+    background-color: var(--black);
+    border-bottom: 1.5px var(--green) solid;
+}
+
+.artist_info:hover .name {
+    color: var(--white) !important;
+}
+
+.artist_info:hover .artist_photo {
+    visibility: visible !important;
+}
+
+.artist_info:hover .info_cover {
+    transform: translateY(-60px);
+    transition: transform 0.3s ease;
+}

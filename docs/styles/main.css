@@ -3,7 +3,7 @@
 
 :root {
     --green: #82EE8D;
-     --light-green: #B1FFB9;
+    --light-green: #B1FFB9;
     --black: #1C1C1C;
     --white: #E7E7E7;
     --main-font: 'Gilroy', sans-serif;
@@ -20,6 +20,9 @@
     font-style: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 * {
     box-sizing: border-box;
@@ -28,6 +31,7 @@
     text-decoration: none;
     outline: none;
     transition: all 0.3s ease-in-out;
+    /* border: 1px red solid; */
 }
 
 body {
@@ -41,6 +45,7 @@ body {
     overflow-x: hidden;
     font-family: var(--main-font);
     color: var(--white);
+    padding-top: 15vh;
 }
 
 body::-webkit-scrollbar {
@@ -90,3 +95,76 @@ section {
     display: flex;
     flex-direction: column;
 }    
+
+input:hover {
+    padding-bottom: 25px;
+}
+
+.tattoo-video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+    transition: opacity 0.4s ease;
+  }
+  
+  .tattoo-video-overlay video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+  }
+
+.hero  .logo_convert {
+    margin: -5vh -5vw;
+    padding: 5vh 5vw;
+}
+  
+  
+.video-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1001;
+}
+
+.tattoo-video-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.813), #82ee8d5d);
+    z-index: 2;
+    pointer-events: none;
+}
+  
+.video-caption .logo  {
+    font-weight: 800;
+    font-size: 64px;
+}
+
+.video-caption .subtitle {
+    font-size: 62px;
+    margin-top: 0.5rem;
+    font-family: var(--italian-font);
+    color: var(--light-green);
+    text-transform: none;
+}
+  
+.video-caption .logo_icon {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

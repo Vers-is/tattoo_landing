@@ -40,7 +40,7 @@ main {
 .link_cover {
     align-self: start;
     display: flex;
-    gap: 15px;
+    gap: 5px;
 }
 
 .left_container {
@@ -164,6 +164,6 @@ option {
 .day:hover, .time:hover {
     color: var(--green);
     cursor: pointer;
-    transform: scale(1.01);
+    transform: scale(1.09);
     transition: .1s;
 }

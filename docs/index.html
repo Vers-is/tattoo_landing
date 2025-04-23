@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="./styles/main_page/hero.css">
     <script src="../docs/app.js" defer></script>
     <script src="../node_modules/animejs/lib/anime.min.cjs" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" 
+
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer"></script>
     <title>Bona Tattoo</title>
 </head>
 <body>
@@ -25,6 +29,19 @@
                     <img src="../docs/icons/logo.PNG" alt="Logo" class="logo_icon">
                     <a href="#hero" class="logo">bona<br>tattoo</a>
                 </div>
+
+            
+                  <div class="tattoo-video-overlay">
+                    <video src="./images/back_video.mp4" autoplay muted loop preload="auto"></video>
+                    <div class="video-caption">
+                      <div class="logo">bona tattoo</div>
+                      <div class="subtitle">care for you</div>
+                    <img src="../docs/icons/logo.PNG" alt="Logo" class="logo_icon">
+
+                    </div>
+                  </div>
+                  
+                  
                 
                 <div class="nav_links"> <!-- >>> NAV: about | services | artists | faq -->
                     <a href="#about" class="nav_link">we are</a>
@@ -62,16 +79,23 @@
 
             <div class="grid-container">
                 <div class="about_row">
+                    <svg class="border-svg" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+                        <rect class="border-path" width="100%" height="100%" fill="none" stroke="#B1FFB9" stroke-width="2"/>
+                    </svg>
                     <div class="about_icon">#.</div>
                     <div class="about_title">tailor-made tattoo<br>for your body <span class="italian">and</span> soul</div>
                     <div class="about_description">Every person is different and so every sottoo has to be unique: Bona Tattoo cores about your values, beliets and ideos and turn it into a beautiful piece of ort which is tailor made as per your body, Our super -talented teom will suggest the right size and the placement on the tattoo in such a way that will only extend the beauty of your body and soul.</div>
                 </div>
+
                 <div class="about_row">
+                    
                     <div class="about_icon">>.</div>
                     <div class="about_title">no more hassle finding a right tattoo <span class="italian">artist</span></div>
                     <div class="about_description">Fraing a right tatic artst can be confurg and tedious, At Bara Tattoo we cater a diverse tattico art portíoio. We are a team of lo award wring tattoo artists expertise in aimost every known genre of tattoo art. Scroll to to explore the work of the best tattoo studio</div>
                 </div>
+                
                 <div class="about_row">
+                   
                     <div class="about_icon">~.</div>
                     <div class="about_title">a brand you can trust for <span class="italian">lifetime</span></div>
                     <div class="about_description">Bona tattoo bollaves in grocatuly changing peoples lives through art and creativity. This is what you asperience when you first interact with Alers. It is not just about gatting a tatica, for us, i a about building a life time relatonship with you. Gatting a tattoo from Bona Tattoo Studio is an exporiance.</div>
@@ -124,10 +148,10 @@
         </section>
 
         <!-- =======    ARTISTS SECTION    ======= -->
-        <section class="artists" id="artists">
+        <section class="artists">
             <div class="title">artists</div>
 
-            <div class="cards_cover">
+            <div class="cards_cover" id="artists">
                 <div class="card">
                     <img src="../docs/images/artists/hector.JPG" alt="" class="artist_image">
                     <div class="artist_name">hector</div>
