@@ -21,35 +21,60 @@ const rows = document.querySelectorAll('.row');
     });
 });
 
-
-// Добавьте этот JavaScript код в ваш проект
-document.querySelectorAll('.question').forEach(question => {
-  question.addEventListener('mouseenter', function() {
-      // Получаем индекс вопроса из data-атрибута
-      const index = this.getAttribute('data-index');
-      
-      // Сначала скрываем все ответы
-      document.querySelectorAll('.answer').forEach(answer => {
-          answer.classList.remove('active');
+// ==== FAQ: Amswer appearing on question hovering
+// ==== with anime.js typing animation
+document.addEventListener('DOMContentLoaded', () => {
+  function typewriterEffect(element) {
+    const text = element.dataset.originalText || element.textContent;
+    element.dataset.originalText = text;
+    anime.remove(element.querySelectorAll('.char'));
+    
+    element.innerHTML = '';
+    text.split(' ').forEach((word, wi) => {
+      const w = document.createElement('span');
+      w.className = 'word';
+      word.split('').forEach(ch => {
+        const c = document.createElement('span');
+        c.className = 'char';
+        c.textContent = ch;
+        w.appendChild(c);
       });
-      
-      // Показываем соответствующий ответ
-      const correspondingAnswer = document.querySelector(`.answer[data-index="${index}"]`);
-      if (correspondingAnswer) {
-          correspondingAnswer.classList.add('active');
+      element.appendChild(w);
+      if (wi < text.split(' ').length - 1) {
+        const sp = document.createElement('span');
+        sp.className = 'space';
+        sp.innerHTML = '&nbsp;';
+        element.appendChild(sp);
       }
+    });
+
+    anime.timeline({ 
+      targets: element.querySelectorAll('.char'),
+      easing: 'linear',
+      delay: anime.stagger(30)
+    }).add({
+      opacity: [0, 1],
+      duration: 30
+    });
+  }
+
+  document.querySelectorAll('.question').forEach(q => {
+    q.addEventListener('mouseenter', () => {
+      const idx = q.dataset.index;
+      document.querySelectorAll('.answer').forEach(a => a.classList.remove('active'));
+      const ans = document.querySelector(`.answer[data-index="${idx}"]`);
+      if (ans) {
+        ans.classList.add('active');
+        typewriterEffect(ans);
+      }
+    });
+  });
+
+  document.querySelector('.left_container')
+          .addEventListener('mouseleave', () => {
+    document.querySelectorAll('.answer').forEach(a => a.classList.remove('active'));
   });
 });
-
-// Опционально: скрывать ответы при уходе с вопроса
-document.querySelector('.left_container').addEventListener('mouseleave', function() {
-  document.querySelectorAll('.answer').forEach(answer => {
-      answer.classList.remove('active');
-  });
-});
-
-
-
 
 // ==== PHONE_NUMBER_VALIDATION: on _contact_ section.
   const phoneInput = document.getElementById("phoneInput");
