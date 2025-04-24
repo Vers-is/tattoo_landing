@@ -151,3 +151,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 });
+
+
+// ===== Smooth appearing images in services on hovering
+const rows = document.querySelectorAll('.row');
+const images = document.querySelectorAll('.cover_service_images');
+
+  rows.forEach(row => {
+    row.addEventListener('mouseenter', () => {
+      const svc = row.dataset.service;
+      images.forEach(wrap => {
+        wrap.classList.toggle('active', wrap.dataset.service === svc);
+      });
+    });
+    row.addEventListener('mouseleave', () => {
+      images.forEach(wrap => wrap.classList.remove('active'));
+    });
+});

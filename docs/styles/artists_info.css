@@ -143,8 +143,7 @@ body {
     z-index: 500 !important; 
     position: relative;
     filter: brightness(1.7);
-    padding: 10px 0;
-    border-width: 5px;
+    border: none;
 
 }
 
@@ -166,11 +165,6 @@ body > *:not(.artist_info) {
     filter: brightness(0.3);
 }
   
-.title:hover {
-    box-shadow: inset 15px 15px 30px black;
-    background-color: var(--black);
-}
-
 .book_cover:hover {
     transform: translateX(-20px);
 }

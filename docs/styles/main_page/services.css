@@ -44,7 +44,48 @@
     opacity: 0;
     visibility: hidden;
 }
+.cover_service_images {
+    position: fixed;
+    top: 55%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.4s ease;
+  }
 
+  .cover_service_images img {
+    max-height: 60vh;
+    max-width: 20vw;
+    object-fit: cover;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.53);
+    opacity: 0;
+    transform: translateX(0);
+    transition: transform 0.5s ease, opacity 0.4s ease;
+  }
+
+  .cover_service_images.active {
+    opacity: 1;
+  }
+
+  .cover_service_images.active img:first-child {
+    opacity: 1;
+    transform: translateX(20px);
+    border-top: solid 1.5px var(--green);
+  }
+
+  .cover_service_images.active img:last-child {
+    opacity: 1;
+    transform: translateX(-20px);
+    border-top: solid 1.5px var(--green);
+
+  }
 
 /* ======  HOVER EFFECTS ====== */
 
