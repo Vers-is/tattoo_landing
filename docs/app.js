@@ -22,27 +22,33 @@ const rows = document.querySelectorAll('.row');
 });
 
 
-// ==== SHOW-MORE_BUTTON: show some more questions on click
-// ==== and also shows less when button clicked second time
-const showMoreBtn = document.querySelector('.show_more_cover');
-const extraQuestions = document.querySelectorAll('.question_cover.extra');
-let isExpanded = false;
-
-showMoreBtn.addEventListener('click', () => {
-    isExpanded = !isExpanded;
-    extraQuestions.forEach(q => {
-      q.style.display = isExpanded ? 'flex' : 'none';
-    });
-
-    const label = showMoreBtn.querySelector('.show_more');
-    const icon = showMoreBtn.querySelector('.down_icon');
-
-    label.textContent = isExpanded ? 'show less' : 'show more';
-    icon.style.transform = isExpanded ? 'rotate(90deg)' : 'rotate(0deg)';
-});
-  extraQuestions.forEach(q => {
-    q.style.display = 'none';
+// Добавьте этот JavaScript код в ваш проект
+document.querySelectorAll('.question').forEach(question => {
+  question.addEventListener('mouseenter', function() {
+      // Получаем индекс вопроса из data-атрибута
+      const index = this.getAttribute('data-index');
+      
+      // Сначала скрываем все ответы
+      document.querySelectorAll('.answer').forEach(answer => {
+          answer.classList.remove('active');
+      });
+      
+      // Показываем соответствующий ответ
+      const correspondingAnswer = document.querySelector(`.answer[data-index="${index}"]`);
+      if (correspondingAnswer) {
+          correspondingAnswer.classList.add('active');
+      }
   });
+});
+
+// Опционально: скрывать ответы при уходе с вопроса
+document.querySelector('.left_container').addEventListener('mouseleave', function() {
+  document.querySelectorAll('.answer').forEach(answer => {
+      answer.classList.remove('active');
+  });
+});
+
+
 
 
 // ==== PHONE_NUMBER_VALIDATION: on _contact_ section.
