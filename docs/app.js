@@ -69,9 +69,9 @@ showMoreBtn.addEventListener('click', () => {
 window.addEventListener('scroll', function() {
   const nav = document.querySelector('nav');
   if (window.scrollY > 0) {
-      nav.classList.add('scrolled'); // Добавляем класс при скролле
+      nav.classList.add('scrolled');
   } else {
-      nav.classList.remove('scrolled'); // Убираем класс, если на верхней части страницы
+      nav.classList.remove('scrolled'); 
   }
 });
 
@@ -111,9 +111,6 @@ anime({
 });
 
 // ==== PHONE NUMBER VALIDATION
-// const phoneInput = document.getElementById("phoneInput");
-// const sendButton = document.getElementById("book");
-// const phoneError = document.getElementById("phoneError");
 
 sendButton.addEventListener("click", function (e) {
     e.preventDefault();
@@ -168,3 +165,27 @@ const images = document.querySelectorAll('.cover_service_images');
       images.forEach(wrap => wrap.classList.remove('active'));
     });
 });
+
+
+// ==== NAV: hidden animation on scroll
+  const nav = document.querySelector("nav");
+  const hero = document.getElementById("hero");
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+    const heroBottom = hero.offsetTop + hero.offsetHeight;
+
+    if (currentScrollY < heroBottom) {
+      nav.style.transform = "translateY(0)";
+      return;
+    }
+
+    if (currentScrollY > lastScrollY) {
+      nav.style.transform = "translateY(-100%)";
+    } else {
+      nav.style.transform = "translateY(0)";
+    }
+    lastScrollY = currentScrollY;
+  });
+
