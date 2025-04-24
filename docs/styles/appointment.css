@@ -153,7 +153,6 @@ option {
     justify-content: center;
     position: absolute;
     top: 35%;
-    left: -50%;
   }
 
 .weekday {
@@ -207,3 +206,43 @@ option {
     color: var(--white);
 }
 
+.day.selected .weekday,
+.day.selected .date {
+    color: var(--green) !important;
+}
+
+.time.selected {
+    color: var(--green) !important;
+    transform: scale(1.1);
+}
+
+.error-message.visible {
+    display: block;
+}
+
+#modal {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    display: none; justify-content: center; align-items: center;
+    background: rgba(0, 0, 0, 0.817); z-index: 100;
+    backdrop-filter: blur(3px);
+  }
+  #modal.visible { display: flex; }
+  #modal .modal-box {
+    background: var(--black); 
+    padding: 10vh 5vw;  
+    text-align: center; 
+    font-size: 32px;
+    border-right: solid 1.5px var(--green);
+    border-bottom: solid 1.5px var(--green);
+  }
+  #modal .modal-box button {
+    background-color: inherit;
+    margin-top: 5vh; padding: 8px 16px; cursor: pointer;
+    border: none;
+    color: var(--green);
+    font-size: 18px;
+}
+
+#modal .modal-box button:hover {
+    transform: translateY(5px);
+}   

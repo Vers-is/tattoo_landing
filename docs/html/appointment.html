@@ -1,157 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bona Tattoo</title>
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/appointment.css">
-    <script src="../node_modules/animejs/lib/anime.min.cjs" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bona Tattoo</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/appointment.css">
+  <script src="../node_modules/animejs/lib/anime.min.cjs" defer></script>
+  <style>
+    #modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+    }
+    #modal.visible { display: flex; }
+    #modal .modal-box {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    #modal .modal-box button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <div class="video-background">
-        <video autoplay muted loop playsinline>
-          <source src="/docs/images/book_app_video.mp4" type="video/mp4">
-        </video>
+
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source src="/docs/images/book_app_video.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="link_cover">
+    <img class="arrow_icon back" src="../icons/grey_arrow.svg" alt="">
+    <a href="../index.html" class="link grey">back</a>
+  </div>
+  <div class="title">book an appointment</div>
+
+  <main>
+    <div class="left_container">
+      <input type="text" placeholder="Phone number" id="phoneInput">
+      <div id="phoneError" class="error-message"></div>
+      <select id="serviceSelect">
+        <option value="">Service</option>
+        <option value="Tattoo">Tattoo</option>
+        <option value="Fixing">Fixing a Bad Tattoo</option>
+        <option value="Cover">Cover up tattoo</option>
+        <option value="Scars">Covering scars</option>
+        <option value="Makeup">Permanent makeup</option>
+        <option value="Laser">Laser removal</option>
+      </select>
+      <select id="artistSelect">
+        <option value="">Artist</option>
+        <option value="Hector">Hector</option>
+        <option value="Natasha">Natasha</option>
+        <option value="Rob">Rob</option>
+        <option value="Kevin">Kevin</option>
+      </select>
+      <div class="hint"><span style="color:var(--green)">*</span> optional</div>
+      <div class="description">By sending this data you are agreeing to our Data Protection Statement</div>
+      <div class="link_cover">
+        <a href="#" class="link green" id="book">book now</a>
+        <img class="arrow_icon" src="../icons/arrow.svg" alt="">
       </div>
-    <div class="link_cover">
-        <img class="arrow_icon back" src="../icons/grey_arrow.svg" alt="">
-        <a href="../index.html" class="link grey">back</a>
     </div>
 
-    
-        <div class="title">book an appointment</div>
+    <div class="right_container">
+      <div class="subtitle">select date</div>
+      <div id="month-name" style="color: grey; font-size: 18px; margin-bottom: 2vh;"></div>
+      <div class="week">
+        <div class="day"><span class="weekday"></span><span class="date"></span></div>
+        <div class="day"><span class="weekday"></span><span class="date"></span></div>
+        <div class="day"><span class="weekday"></span><span class="date"></span></div>
+        <div class="day"><span class="weekday"></span><span class="date"></span></div>
+        <div class="day"><span class="weekday"></span><span class="date"></span></div>
+        <div class="day"><span class="weekday"></span><span class="date"></span></div>
+        <div class="day"><span class="weekday"></span><span class="date"></span></div>
+      </div>
+      <div class="subtitle" style="margin-top: 10vh;">select time</div>
+      <div class="time_cover">
+        <div class="time">10:00</div>
+        <div class="time">14:00</div>
+        <div class="time">18:00</div>
+      </div>
+    </div>
+  </main>
 
-    <main>
-        <div class="left_container">
-            <input type="text" placeholder="Phone number" id="phoneInput">
-            <div id="phoneError" class="error-message"></div>
-            <select placeholder="Service">
-                <option value="1" >Tattoo</option>
-                <option value="2">Fixing a Bad Tatto</option>
-                <option value="3">Cover up tattoo</option>
-                <option value="4">Covering scars</option>
-                <option value="5">Permanent makeup</option>
-                <option value="6">Laser removal</option>
-            </select>
-            <select placeholder="Artist">
-                <option value="1" >Hector</option>
-                <option value="2">Natasha</option>
-                <option value="3">Rob</option>
-                <option value="4">Kevin</option>
-            </select>
-            <div class="hint"><span style="color:var(--green)">* </span> optional</div>
-            <div class="description">By sending this data you are agreeing to our Data Pritection Statement</div>
-            <div class="link_cover">
-                <a href="" class="link green" id="book">book now</a>
-                <img class="arrow_icon" src="../icons/arrow.svg" alt="">
-            </div>    
-        </div>
+  <div id="modal">
+    <div class="modal-box">
+      <p>Your data has been sent!</p>
+      <button id="closeModal">OKAY</button>
+    </div>
+  </div>
 
-        <div class="right_container">
-            <div class="subtitle">select date</div>
-                <div id="month-name" style="color: grey; font-size: 18px; margin-bottom: 2vh;"></div>
-                <div class="week">
-                    <div class="day">
-                      <span class="weekday"></span>
-                      <span class="date"></span>
-                    </div>
-                    <div class="day">
-                      <span class="weekday"></span>
-                      <span class="date"></span>
-                    </div>
-                    <div class="day">
-                      <span class="weekday"></span>
-                      <span class="date"></span>
-                    </div>
-                    <div class="day">
-                      <span class="weekday"></span>
-                      <span class="date"></span>
-                    </div>
-                    <div class="day">
-                        <span class="weekday"></span>
-                        <span class="date"></span>
-                    </div>
-                    <div class="day">
-                        <span class="weekday"></span>
-                        <span class="date"></span>
-                    </div>
-                    <div class="day">
-                        <span class="weekday"></span>
-                        <span class="date"></span>
-                    </div>
-                    
-                  </div>
-                  
-            <div class="subtitle" style="margin-top: 10vh;">select time</div>
-            <div class="time_cover">
-                <div class="time">
-                    10:00
-                </div>
-                <div class="time">
-                    14:00
-                </div>
-                <div class="time">
-                    18:00
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <script>
-        // ==== PHONE NUMBER VALIDATION
-        const phoneInput = document.getElementById("phoneInput");
-        const sendButton = document.getElementById("book");
-        const phoneError = document.getElementById("phoneError");
-
-        sendButton.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            const phoneValue = phoneInput.value.trim();
-            const phoneRegex = /^\+?\d{10,15}$/;
-
-            if (phoneRegex.test(phoneValue)) {
-            phoneError.textContent = "";
-            phoneError.classList.remove("visible");
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const days = [...document.querySelectorAll('.day')];
+      const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      const weekDays = ['sun','mon','tue','wed','thu','fri','sat'];
+      let selectedDate = null;
+      let selectedTime = null;
+  
+      const phoneInput = document.getElementById('phoneInput');
+      const phoneError = document.getElementById('phoneError');
+  
+      function validatePhone(phone) {
+        const phoneRegex = /^[0-9]{10,15}$/;
+        return phoneRegex.test(phone);
+      }
+  
+      const now = new Date();
+      document.getElementById('month-name').textContent = months[now.getMonth()];
+      days.forEach((el, i) => {
+        const d = new Date(now);
+        d.setDate(now.getDate() + i);
+        el.querySelector('.weekday').textContent = weekDays[d.getDay()];
+        el.querySelector('.date').textContent = d.getDate();
+        el.onclick = () => {
+          days.forEach(d => d.classList.remove('selected'));
+          el.classList.add('selected');
+          selectedDate = `${d.getDate()} ${months[d.getMonth()]}`;
+        };
+      });
+  
+      const times = [...document.querySelectorAll('.time')];
+      times.forEach(el => el.onclick = () => {
+        times.forEach(t => t.classList.remove('selected'));
+        el.classList.add('selected');
+        selectedTime = el.textContent;
+      });
+  
+      document.getElementById('book').onclick = e => {
+        e.preventDefault();
+  
+        const phone = phoneInput.value.trim();
+        const service = document.getElementById('serviceSelect').value;
+        const artist = document.getElementById('artistSelect').value;
+  
+        if (!validatePhone(phone)) {
+            phoneError.textContent = 'Please enter a valid phone number (10-15 digits).';
+            phoneError.style.color = 'red';
+            phoneError.style.fontSize = '14px';
+            phoneError.classList.add('visible');
+            return;
             } else {
-            phoneError.textContent = "Please enter a valid phone number.";
-            phoneError.classList.add("visible");
+            phoneError.textContent = '';
+            phoneError.classList.remove('visible');
             }
-        });
 
-
-        // ==== DISPLAYING USERS CUDDENTS MONTH 
-        const now = new Date();
-        const month = now.toLocaleString('en-US', { month: 'long' });
-        document.getElementById('month-name').textContent = month;
-
-
-        // ==== DISPLAY THE CURRENT DATE AND + 6 AFTER IT 
-        // ==== including week date
-        const daysContainer = document.getElementById("days");
-
-        const weekContainer = document.querySelector('.week');
-        const weekdays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-
-        for (let i = 0; i < 7; i++) {
-        const date = new Date();
-        date.setDate(date.getDate() + i);
-
-        const dayName = weekdays[date.getDay()];
-        const dayNum = date.getDate();
-
-        const dayDiv = document.createElement('div');
-        dayDiv.classList.add('day');
-        if (i === 0) dayDiv.classList.add('today');
-
-        dayDiv.innerHTML = `
-            <span class="weekday">${dayName}</span>
-            <span class="date">${dayNum}</span>
-        `;
-
-        weekContainer.appendChild(dayDiv);
+  
+        if (!phone || !service || !selectedDate || !selectedTime) {
+          alert("Please fill in all required fields.");
+          return;
         }
-    </script>
+  
+        phoneInput.value = '';
+        document.getElementById('serviceSelect').value = '';
+        document.getElementById('artistSelect').value = '';
+        days.forEach(d => d.classList.remove('selected'));
+        times.forEach(t => t.classList.remove('selected'));
+        selectedDate = null;
+        selectedTime = null;
+  
+        document.getElementById('modal').classList.add('visible');
+      };
+  
+      document.getElementById('closeModal').onclick = () => {
+        document.getElementById('modal').classList.remove('visible');
+      };
+    });
+  </script>
+  
 
 </body>
 </html>
