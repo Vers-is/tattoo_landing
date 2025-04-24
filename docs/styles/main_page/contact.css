@@ -46,8 +46,11 @@ input::placeholder, .hint {
     text-transform: none;
 }
 
-.contact .title {
-    max-width: 60%;
+.contact .logo_icon {
+    width: auto;
+    height: 10vh;
+    animation: spin 2s linear infinite;
+
 }
 
 .error-message {
@@ -60,6 +63,14 @@ input::placeholder, .hint {
 .error-message.visible  {
     opacity: 1;
 }
+
+.logo_title_cover {
+    display: flex;
+    gap: 5vw;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* ======  HOVER EFFECTS ====== */
 
