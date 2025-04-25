@@ -239,15 +239,18 @@
       };
     });
 
-    document.addEventListener('DOMContentLoaded', () => {
-  // Автоматический выбор артиста из URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const artist = urlParams.get('artist');
-  if (artist) {
-    document.getElementById('artistSelect').value = artist;
-  }
-
-  // Остальной существующий код...
+  document.addEventListener('DOMContentLoaded', () => {
+    const params      = new URLSearchParams(window.location.search);
+    const artistParam = params.get('artist') || params.get('Artist');
+    if (artistParam) {
+      const wrapper = document.querySelector('#artistSelect');
+      const option  = wrapper.querySelector(`.options li[data-value="${artistParam}"]`);
+      if (option) {
+        const curCover = wrapper.querySelector('.current-cover');
+        curCover.textContent   = option.textContent;
+        curCover.dataset.value = option.dataset.value;
+      }
+    }
 });
   </script>
   
