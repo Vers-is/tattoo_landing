@@ -49,22 +49,51 @@
     <div class="left_container">
       <input type="text" placeholder="Phone number" id="phoneInput">
       <div id="phoneError" class="error-message"></div>
-      <select id="serviceSelect">
+      <div class="custom-select" id="serviceSelect">
+        <div class="current-cover" style="display: flex; justify-content: space-between; align-items: center;">
+          <div class="current">Service</div>
+          <img src="/docs/icons/down_arrow.svg" alt="" class="arrow">
+        </div>
+        <ul class="options">
+          <li data-value="Tattoo">Tattoo</li>
+          <li data-value="Fixing">Fixing a Bad Tattoo</li>
+          <li data-value="Fixing">Cover up tattoo</li>
+          <li data-value="Fixing">Covering scars</li>
+          <li data-value="Fixing">Permanent makeup</li>
+          <li data-value="Fixing">Laser removal</li>
+        </ul>
+      </div>
+      <div class="custom-select" id="artistSelect">
+        <div class="current-cover" style="display: flex; justify-content: space-between; align-items: center;">
+          <div class="current">Artist</div>
+          <img src="/docs/icons/down_arrow.svg" alt="" class="arrow">
+        </div>
+        <ul class="options">
+          <li data-value="Hector">Hector</li>
+          <li data-value="Natasha">Natasha</li>
+          <li data-value="Rob">Rob</li>
+          <li data-value="Kevin">Kevin</li>
+        </ul>
+      </div>
+      <!-- <select >
         <option value="">Service</option>
         <option value="Tattoo">Tattoo</option>
         <option value="Fixing">Fixing a Bad Tattoo</option>
-        <option value="Cover">Cover up tattoo</option>
-        <option value="Scars">Covering scars</option>
+        <option value="Cover"></option>
+        <option value="Scars"></option>
         <option value="Makeup">Permanent makeup</option>
-        <option value="Laser">Laser removal</option>
-      </select>
-      <select id="artistSelect">
+        <option value="Laser"></option>
+      </select> -->
+      <!-- <select id="artistSelect">
         <option value="">Artist</option>
         <option value="Hector">Hector</option>
         <option value="Natasha">Natasha</option>
         <option value="Rob">Rob</option>
         <option value="Kevin">Kevin</option>
-      </select>
+      </select> -->
+
+        
+
       <div class="hint"><span style="color:var(--green)">*</span> optional</div>
       <div class="description">By sending this data you are agreeing to our Data Protection Statement</div>
       <div class="link_cover">
@@ -103,6 +132,35 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+
+      document.querySelectorAll('.custom-select').forEach(select => {
+            const current = select.querySelector('.current-cover');
+            const optionsList = select.querySelector('.options');
+            const options = optionsList.querySelectorAll('li');
+        
+            current.dataset.value = '';
+        
+            current.addEventListener('click', e => {
+              e.stopPropagation();
+              select.classList.toggle('open');
+            });
+        
+            options.forEach(option => {
+              option.addEventListener('click', e => {
+                e.stopPropagation();
+                current.textContent = option.textContent;
+                current.dataset.value = option.dataset.value;
+                select.classList.remove('open');
+              });
+            });
+          });
+        
+          document.addEventListener('click', () => {
+            document.querySelectorAll('.custom-select.open').forEach(s => {
+              s.classList.remove('open');
+            });
+          });
+
       const days = [...document.querySelectorAll('.day')];
       const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
       const weekDays = ['sun','mon','tue','wed','thu','fri','sat'];
@@ -138,45 +196,59 @@
         selectedTime = el.textContent;
       });
   
-      document.getElementById('book').onclick = e => {
-        e.preventDefault();
-  
-        const phone = phoneInput.value.trim();
-        const service = document.getElementById('serviceSelect').value;
-        const artist = document.getElementById('artistSelect').value;
-  
-        if (!validatePhone(phone)) {
-            phoneError.textContent = 'Please enter a valid phone number (10-15 digits).';
-            phoneError.style.color = 'red';
-            phoneError.style.fontSize = '14px';
-            phoneError.classList.add('visible');
-            return;
-            } else {
-            phoneError.textContent = '';
-            phoneError.classList.remove('visible');
-            }
+      document.getElementById('book').addEventListener('click', e => {
+  e.preventDefault();
 
-  
-        if (!phone || !service || !selectedDate || !selectedTime) {
-          alert("Please fill in all required fields.");
-          return;
-        }
-  
-        phoneInput.value = '';
-        document.getElementById('serviceSelect').value = '';
-        document.getElementById('artistSelect').value = '';
-        days.forEach(d => d.classList.remove('selected'));
-        times.forEach(t => t.classList.remove('selected'));
-        selectedDate = null;
-        selectedTime = null;
-  
-        document.getElementById('modal').classList.add('visible');
-      };
+  const phone   = phoneInput.value.trim();
+  const service = document.querySelector('#serviceSelect .current-cover').dataset.value;
+  const artist  = document.querySelector('#artistSelect .current-cover').dataset.value;
+
+  // валидация телефона
+  if (!validatePhone(phone)) {
+    phoneError.textContent = 'Please enter a valid phone number (10-15 digits).';
+    phoneError.classList.add('visible');
+    return;
+  } else {
+    phoneError.classList.remove('visible');
+  }
+
+  // проверяем обязательные поля
+  if (!phone || !service || !selectedDate || !selectedTime) {
+    alert('Please fill in all required fields.');
+    return;
+  }
+
+  // сброс формы
+  phoneInput.value = '';
+  document.querySelectorAll('.custom-select').forEach(sel => {
+    const cur = sel.querySelector('.current-cover');
+    cur.textContent   = sel.id === 'serviceSelect' ? 'Service' : 'Artist';
+    cur.dataset.value = '';
+  });
+  days.forEach(d => d.classList.remove('selected'));
+  times.forEach(t => t.classList.remove('selected'));
+  selectedDate = selectedTime = null;
+
+  // показать модалку
+  document.getElementById('modal').classList.add('visible');
+});
+
   
       document.getElementById('closeModal').onclick = () => {
         document.getElementById('modal').classList.remove('visible');
       };
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+  // Автоматический выбор артиста из URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const artist = urlParams.get('artist');
+  if (artist) {
+    document.getElementById('artistSelect').value = artist;
+  }
+
+  // Остальной существующий код...
+});
   </script>
   
 

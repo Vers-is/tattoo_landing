@@ -31,6 +31,7 @@ html {
     text-decoration: none;
     outline: none;
     transition: all 0.3s ease-in-out;
+    list-style: none;
     /* border: 1px red solid; */
 }
 
@@ -96,8 +97,8 @@ section {
     flex-direction: column;
 }    
 
-input:hover {
-    padding-bottom: 25px;
+input:hover, .custom-select:hover {
+    padding-bottom: 20px;
 }
 
 .tattoo-video-overlay {

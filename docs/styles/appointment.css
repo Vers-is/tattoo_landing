@@ -88,7 +88,7 @@ main {
     position: relative;
 }
 
-input, select {
+input, .custom-select{
     width: 30vw;
 }
 
@@ -96,7 +96,7 @@ input, select {
     font-size: 24px;
 }
 
-input, select {
+input, .custom-select {
     color: white;
     padding: 10px 0;
     font-size: 18px;
@@ -104,13 +104,10 @@ input, select {
     border: none;
     border-bottom: 2px solid var(--white);
     outline: none;
+    cursor: pointer;
 }
 
-select {
-    margin-top: 5px;
-}
-
-input::placeholder, select::placeholder, .hint {
+input::placeholder, .hint {
     color: grey;
 }
 
@@ -125,7 +122,7 @@ input::placeholder, select::placeholder, .hint {
     padding-bottom: 5vh;
 }
 
-.hint{
+.hint {
     margin-top: -5px;
 }
 
@@ -138,11 +135,6 @@ input::placeholder, select::placeholder, .hint {
 
 .error-message.visible  {
     opacity: 1;
-}
-
-option {
-    background-color: var(--black);
-    color: var(--white);
 }
 
 .week {
@@ -225,17 +217,21 @@ option {
     display: none; justify-content: center; align-items: center;
     background: rgba(0, 0, 0, 0.817); z-index: 100;
     backdrop-filter: blur(3px);
-  }
-  #modal.visible { display: flex; }
-  #modal .modal-box {
-    background: var(--black); 
-    padding: 10vh 5vw;  
+}
+
+#modal.visible { display: flex; }
+
+#modal .modal-box {
+    border-radius: 0 !important;
+    background: var(--black) !important; 
+    padding: 10vh 5vw !important;  
     text-align: center; 
     font-size: 32px;
     border-right: solid 1.5px var(--green);
     border-bottom: solid 1.5px var(--green);
-  }
-  #modal .modal-box button {
+}
+
+#modal .modal-box button {
     background-color: inherit;
     margin-top: 5vh; padding: 8px 16px; cursor: pointer;
     border: none;
@@ -246,3 +242,32 @@ option {
 #modal .modal-box button:hover {
     transform: translateY(5px);
 }   
+
+.options {
+    margin-top: 2vh;
+    padding: 2vh 0;
+    position: absolute;
+    width: 30vw;
+    display: none;
+    background: var(--black);
+    color: grey;
+}
+
+.custom-select.open .options {
+    display: block;
+}
+
+.options li {
+    cursor: pointer;
+    padding: 5px 20px;
+}
+
+.options li:hover {
+    background: var(--green);
+}
+
+.arrow {
+    z-index: -1;
+    filter: brightness(0) invert(1);
+  }
+  
