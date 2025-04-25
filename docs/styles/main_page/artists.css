@@ -79,9 +79,13 @@
     filter: blur(3px) brightness(0.5);
 }
 
+.card {
+    transition: transform .3s !important;
+}
+
 .card:hover {
     filter: none !important;
-    transform:translateY(-30px);
+    transform: translateY(-30px) !important;
     box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3), -15px -15px 30px rgba(0, 0, 0, 0.2);
     border-right: 1.5px var(--green) solid;
     border-bottom: 1.5px var(--green) solid;

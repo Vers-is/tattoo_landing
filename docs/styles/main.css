@@ -188,5 +188,16 @@ input:hover, .custom-select:hover {
     .hint {
         font-size: 14px !important;
     }
-
 }
+
+.scroll-fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .scroll-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
