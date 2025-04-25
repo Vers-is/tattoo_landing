@@ -44,14 +44,12 @@ body {
     transition: 
         opacity 0.3s ease,
         transform 0.3s ease;
-    position: absolute;
     padding-top: 20px;
     color: #69be71;
-    top: 85%;
-    align-self: start;
     display: flex;
     gap: 5px;
-    left: 55%;
+    position: fixed;        
+    margin-top: auto;        
 }
 
 .artist_info {
@@ -149,7 +147,7 @@ body {
 
 .link_cover:hover {
     transition: .3s;
-    padding-left: 20px;
+    transform:  translateX(-10px);
 }
 
 body > *:not(.artist_info) {

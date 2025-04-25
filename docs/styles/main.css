@@ -169,3 +169,24 @@ input:hover, .custom-select:hover {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+@media (max-width: 1366px) {
+    .hero .title {
+        font-size: 60px;
+    } 
+
+    .contact .title {
+        font-size: 50px;
+    }   
+
+    .footer_link {
+        font-size: 13px !important;
+    }
+}
+
+@media (min-width: 1500px) {
+    .hint {
+        font-size: 14px !important;
+    }
+
+}

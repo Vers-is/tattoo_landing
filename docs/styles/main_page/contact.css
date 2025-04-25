@@ -26,7 +26,7 @@ input::placeholder, .hint {
 
 .send_cover {
     display: flex;
-    gap: 20px;
+    gap: 10%;
     margin-top: 2vh;
 }
 

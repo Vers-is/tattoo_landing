@@ -4,6 +4,10 @@
     justify-content: center;
 }
 
+.services * {
+    cursor: pointer;
+}
+
 .services .title {
     align-self: start;
     margin-bottom: -5vh;
