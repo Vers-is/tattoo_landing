@@ -80,7 +80,7 @@
 }
 
 .card {
-    transition: transform .3s !important;
+    transition: transform .5s !important;
 }
 
 .card:hover {

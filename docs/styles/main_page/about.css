@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('/docs/images/blurryback.PNG');
+    background-image: url('../../images/blurryback.PNG');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -51,14 +51,10 @@
     border: 2px transparent solid;
 }
 
-.about_row:hover {
-    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3), -15px -15px 30px rgba(0, 0, 0, 0.2);
-    border-right: 2px var(--green) solid;
-    border-bottom: 2px var(--green) solid;
-}    
+   
 
 .about_row {
-    transition: all .3s !important;
+    transition: all .5s !important;
 }
 
 .border-svg {
@@ -105,3 +101,9 @@
 
 
 /* ======  HOVER EFFECTS ====== */
+
+.about_row:hover {
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3), -15px -15px 30px rgba(0, 0, 0, 0.2);
+    border-right: 2px var(--green) solid;
+    border-bottom: 2px var(--green) solid;
+} 
