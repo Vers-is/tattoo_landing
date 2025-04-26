@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-image: url('/docs/images/blurryback.PNG');
+    background-image: url('../../images/blurryback.PNG');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -88,14 +88,13 @@
     position: absolute;
     text-transform: none;
     top: 0;
-    left: 0; /* Изменили смещение */
-    width: 100%; /* Занимаем всю ширину контейнера */
-    max-width: 600px; /* Или любое другое значение */
-    white-space: normal; /* Разрешаем перенос слов */
-    word-wrap: break-word; /* Перенос длинных слов */
+    left: 0; 
+    width: 100%; 
+    max-width: 600px; 
+    white-space: normal; 
+    word-wrap: break-word; 
 }
 
-/* базовый стиль (скрыт) */
 .answer {
     position: absolute;
     top: 0; left: 0;
