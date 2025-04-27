@@ -99,6 +99,7 @@ section {
 
 input:hover, .custom-select:hover {
     padding-bottom: 20px;
+    border-color: var(--green);
 }
 
 .tattoo-video-overlay {
@@ -201,3 +202,34 @@ input:hover, .custom-select:hover {
     transform: translateY(0);
   }
   
+
+  #modal {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    display: none; justify-content: center; align-items: center;
+    background: rgba(0, 0, 0, 0.817); z-index: 100;
+    backdrop-filter: blur(3px);
+}
+
+#modal.visible { display: flex; }
+
+#modal .modal-box {
+    border-radius: 0 !important;
+    background: var(--black) !important; 
+    padding: 10vh 5vw !important;  
+    text-align: center; 
+    font-size: 32px;
+    border-right: solid 1.5px var(--green);
+    border-bottom: solid 1.5px var(--green);
+}
+
+#modal .modal-box button {
+    background-color: inherit;
+    margin-top: 5vh; padding: 8px 16px; cursor: pointer;
+    border: none;
+    color: var(--green);
+    font-size: 18px;
+}
+
+#modal .modal-box button:hover {
+    transform: translateY(5px);
+}

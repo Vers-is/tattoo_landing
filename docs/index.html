@@ -249,6 +249,41 @@
             </div>
         </section>
 
+        <div id="modal">
+            <div class="modal-box">
+                <p>Your data has been sent!</p>
+                <button id="closeModal">OKAY</button>
+            </div>
+        </div>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+        
+                document.getElementById('sendButton').addEventListener('click', (e) => {
+                    e.preventDefault();
+        
+                    const phoneInput = document.getElementById('phoneInput');
+                    const phone = phoneInput.value.trim();
+        
+                    const phoneRegex = /^[0-9]{10,15}$/;
+                    if (!phoneRegex.test(phone)) {
+                        document.getElementById('phoneError').textContent = 'Please enter a valid phone number (10-15 digits).';
+                        document.getElementById('phoneError').classList.add('visible');
+                        return;
+                    } else {
+                        document.getElementById('phoneError').classList.remove('visible');
+                    }
+        
+                    document.getElementById('modal').classList.add('visible');
+        
+                    phoneInput.value = '';
+                    document.getElementById('closeModal').onclick = () => {
+                        document.getElementById('modal').classList.remove('visible');
+                    };
+                });
+            });
+        </script>
+
         <!-- =======    FAQ SECTION    ======= -->
         <section class="faq">
             <div class="title" id="faq">faq</div>

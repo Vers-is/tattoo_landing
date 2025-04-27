@@ -161,7 +161,6 @@
   const service = document.querySelector('#serviceSelect .current-cover').dataset.value;
   const artist  = document.querySelector('#artistSelect .current-cover').dataset.value;
 
-  // валидация телефона
   if (!validatePhone(phone)) {
     phoneError.textContent = 'Please enter a valid phone number (10-15 digits).';
     phoneError.classList.add('visible');
@@ -170,13 +169,12 @@
     phoneError.classList.remove('visible');
   }
 
-  // проверяем обязательные поля
   if (!phone || !service || !selectedDate || !selectedTime) {
-    alert('Please fill in all required fields.');
+    document.querySelector('#modal .modal-box p').textContent = 'Please fill in all required fields.';
+    document.getElementById('modal').classList.add('visible');
     return;
   }
 
-  // сброс формы
   phoneInput.value = '';
   document.querySelectorAll('.custom-select').forEach(sel => {
     const cur = sel.querySelector('.current-cover');
@@ -187,7 +185,6 @@
   times.forEach(t => t.classList.remove('selected'));
   selectedDate = selectedTime = null;
 
-  // показать модалку
   document.getElementById('modal').classList.add('visible');
 });
 

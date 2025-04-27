@@ -54,7 +54,7 @@ input::placeholder, .hint {
 }
 
 .error-message {
-    color: rgb(202, 0, 0);
+    color: rgb(246, 35, 35);
     font-size: 14px;
     transition: opacity 0.3s ease;
     opacity: 0;
@@ -63,6 +63,11 @@ input::placeholder, .hint {
 .error-message.visible  {
     opacity: 1;
 }
+
+.input_scope:has(.error-message.visible) .input {
+    border-bottom: 2px solid rgb(246, 35, 35);
+}
+
 
 .logo_title_cover {
     display: flex;
