@@ -1,8 +1,7 @@
 .faq {
-    margin-top: -10vh;
-    height: 140vh;
+    height: 100vh;
     display: flex;
-    padding-bottom: 20vh;
+    padding-bottom: 40vh;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -39,6 +38,8 @@
 }
 
 .faq .title {
+    position: relative;
+    z-index: 100;
     align-self: start;
     margin-bottom: -10vh;
 }

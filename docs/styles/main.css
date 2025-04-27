@@ -84,7 +84,7 @@ a {
 }
 
 section + section {
-    margin-top: 30vh;
+    /* margin-top: 30vh; */
 }
   
 section {
@@ -183,9 +183,21 @@ input:hover, .custom-select:hover {
     .footer_link {
         font-size: 13px !important;
     }
+    section + section {
+        margin-top: 5vh;
+    }
+    section {
+        padding: 10vh 5vw;
+    }
 }
 
 @media (min-width: 1500px) {
+    section + section {
+        margin-top: -30vh; 
+    }
+    section {
+        padding: 5vh 8vw; 
+    }
     .hint {
         font-size: 14px !important;
     }
@@ -233,3 +245,14 @@ input:hover, .custom-select:hover {
 #modal .modal-box button:hover {
     transform: translateY(5px);
 }
+
+section {
+    width: 100vw;
+    height: auto;
+    padding: 5vh 10vw;
+    text-transform: uppercase;
+    gap: 10vh;
+    display: flex;
+    flex-direction: column;
+}
+
