@@ -130,6 +130,8 @@
 
 
 .question:hover {
+    z-index: 1000;
+    position: relative;
     filter: none !important;
     transform: translateX(5vw);
     background-color: #69be71;
