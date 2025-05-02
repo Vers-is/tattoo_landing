@@ -58,6 +58,8 @@
 }
 
 .question {
+    z-index: 1000;
+    position: relative;
     transition: .3s !important;
     background-color: #646a691b;
     padding: 4vh 5vw 4vh 8vw;
@@ -77,8 +79,6 @@
     opacity: 0;
 }
   
-  
-
 .answer {
     font-size: 40px;
     color: var(--green);
@@ -106,6 +106,8 @@
   }
   
 .answer.active {
+    z-index: 1000;
+    position: relative;
     opacity: 1;
     visibility: visible;
 }
