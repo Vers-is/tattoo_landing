@@ -148,7 +148,7 @@ input::placeholder, .hint {
     justify-content: center;
     position: absolute;
     top: 35%;
-  }
+}
 
 .weekday {
     display: block;

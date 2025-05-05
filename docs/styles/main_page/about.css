@@ -4,10 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('../../images/blurryback.PNG');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('../../images/blurryback.PNG') center / cover no-repeat;
     position: relative; 
     z-index: 0;
 }
@@ -49,11 +46,6 @@
     padding: 2vh 5vw;
     backdrop-filter: blur(4px);
     border: 2px transparent solid;
-}
-
-   
-
-.about_row {
     transition: all .3s !important;
 }
 

@@ -32,7 +32,6 @@ html {
     outline: none;
     transition: all 0.3s ease-in-out;
     list-style: none;
-    /* border: 1px red solid; */
 }
 
 body {
@@ -83,87 +82,19 @@ a {
     color: var(--green);
 }
 
-section + section {
-    /* margin-top: -45vh; */
-}
-  
 section {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     padding: 5vh 10vw;
     text-transform: uppercase;
-    gap: 15vh;
+    gap: 10vh;
     display: flex;
     flex-direction: column;
-}    
+}
 
 input:hover, .custom-select:hover {
     padding-bottom: 20px;
     border-color: var(--green);
-}
-
-.tattoo-video-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 999;
-    transition: opacity 0.4s ease;
-  }
-  
-  .tattoo-video-overlay video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.6);
-  }
-
-.hero  .logo_convert {
-    margin: -5vh -5vw;
-    padding: 5vh 5vw;
-}
-  
-  
-.video-caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    z-index: 1001;
-}
-
-.tattoo-video-overlay::before {
-    content: "";
-    position: absolute;
-    top: 0; 
-    left: 0;
-    width: 100%;
-    height: 100%; 
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.813), #82ee8d5d);
-    z-index: 2;
-    pointer-events: none;
-}
-  
-.video-caption .logo  {
-    font-weight: 800;
-    font-size: 64px;
-}
-
-.video-caption .subtitle {
-    font-size: 62px;
-    margin-top: 0.5rem;
-    font-family: var(--italian-font);
-    color: var(--light-green);
-    text-transform: none;
-}
-  
-.video-caption .logo_icon {
-  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
@@ -171,6 +102,8 @@ input:hover, .custom-select:hover {
   100% { transform: rotate(360deg); }
 }
 
+
+/* ADAPTATION */
 @media (max-width: 1366px) {
     .hero .title {
         font-size: 60px;
@@ -203,19 +136,20 @@ input:hover, .custom-select:hover {
     }
 }
 
+/* SMOOTH APPEARING ON SCROLL */
 .scroll-fade {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1s ease-out, transform 1s ease-out;
   }
   
-  .scroll-fade.visible {
+.scroll-fade.visible {
     opacity: 1;
     transform: translateY(0);
-  }
+}
   
-
-  #modal {
+/* MODAL WINDOW (BOOK APP., CONTACT SECTION) */
+#modal {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
     display: none; justify-content: center; align-items: center;
     background: rgba(0, 0, 0, 0.817); z-index: 100;
@@ -246,13 +180,18 @@ input:hover, .custom-select:hover {
     transform: translateY(5px);
 }
 
-section {
-    width: 100vw;
-    height: auto;
-    padding: 5vh 10vw;
-    text-transform: uppercase;
-    gap: 10vh;
-    display: flex;
-    flex-direction: column;
+/* ERROR MESSAGE*/
+.error-message {
+    color: rgb(246, 35, 35);
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
 }
 
+.error-message.visible  {
+    opacity: 1;
+}
+
+.input_scope:has(.error-message.visible) .input {
+    border-bottom: 2px solid rgb(246, 35, 35);
+}

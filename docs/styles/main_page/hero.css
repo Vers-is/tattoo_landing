@@ -128,6 +128,69 @@ nav.hidden {
     transition: transform 0.3s ease-in-out;
 }
 
+/* for logo-hovering */
+.tattoo-video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+    transition: opacity 0.4s ease;
+  }
+  
+.tattoo-video-overlay video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.hero  .logo_convert {
+    margin: -5vh -5vw;
+    padding: 5vh 5vw;
+}
+
+.video-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1001;
+}
+
+.tattoo-video-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.813), #82ee8d5d);
+    z-index: 2;
+    pointer-events: none;
+}
+  
+.video-caption .logo  {
+    font-weight: 800;
+    font-size: 64px;
+}
+
+.video-caption .subtitle {
+    font-size: 62px;
+    margin-top: 0.5rem;
+    font-family: var(--italian-font);
+    color: var(--light-green);
+    text-transform: none;
+}
+  
+.video-caption .logo_icon {
+  animation: spin 2s linear infinite;
+}
 
 /* ======  HOVER EFFECTS ====== */
 

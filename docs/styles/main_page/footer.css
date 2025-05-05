@@ -32,10 +32,9 @@ footer .logo_icon{
     text-transform: uppercase;
     font-size: 24px;
     margin-bottom: 5vh;
-
 }
 
- .footer_link {
+.footer_link {
     font-size: 16px;
     margin-bottom: 10px;
     opacity: 0.5;

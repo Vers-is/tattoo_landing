@@ -17,7 +17,6 @@ body {
     transition: .3s;
 }
 
-
 .link_cover {
     transition: all .3s;
     align-self: start;
@@ -71,7 +70,6 @@ body {
     font-size: 18px;
 }
 
-
 .artist_photo {
     width: 100%;
     max-width: 300px;
@@ -118,8 +116,8 @@ body {
 
 .pricing {
     color: #808080;
-   margin-top: 10px;
-   font-size: 18px;
+    margin-top: 10px;
+    font-size: 18px;
 }
 
 .grey {
@@ -142,7 +140,6 @@ body {
     position: relative;
     filter: brightness(1.7);
     border: none;
-
 }
 
 .link_cover:hover {
