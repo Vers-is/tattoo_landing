@@ -82,22 +82,22 @@
 .answer {
     font-size: 40px;
     color: var(--green);
+    opacity: 0;
+    visibility: hidden;
     font-weight: 700;
     position: absolute;
     text-transform: none;
+    top: 0;
+    left: 0; 
+    width: 100%; 
+    max-width: 600px; 
     white-space: normal; 
     word-wrap: break-word; 
-    top: 0; left: 0;
-    width: 100%; 
-    max-width: 600px;
-    opacity: 0;
-    visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-  
+}    
+
 .answer.active {
     z-index: 1000;
-    position: relative;
     opacity: 1;
     visibility: visible;
 }
@@ -130,5 +130,6 @@
 }
 
 .left_container:has(.question:hover) .question {
+    /* filter: blur(2px); */
     filter: brightness(0.3);
 }
