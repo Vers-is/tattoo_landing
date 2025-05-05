@@ -24,12 +24,35 @@ const rows = document.querySelectorAll('.row');
 // ==== FAQ: Amswer appearing on question hovering
 // ==== with anime.js typing animation
 document.addEventListener('DOMContentLoaded', () => {
-  function typewriterEffect(element) {
-    const text = element.dataset.originalText || element.textContent;
-    element.dataset.originalText = text;
-    anime.remove(element.querySelectorAll('.char'));
-    
-    element.innerHTML = '';
+  const answers = document.querySelectorAll('.answer');
+  const questions = document.querySelectorAll('.question');
+  const leftCont = document.querySelector('.left_container');
+
+  // 1) Сохраняем оригинальный текст
+  answers.forEach(ans => {
+    ans.dataset.originalText = ans.textContent.trim();
+  });
+
+  // Функция сброса ответа
+  function resetAnswer(el) {
+    // Останавливаем любые текущие анимации
+    anime.remove(el.querySelectorAll('.char'));
+    // Восстанавливаем исходный текст
+    el.innerHTML = el.dataset.originalText;
+    // Сбрасываем флаги
+    el.classList.remove('active');
+    delete el.dataset.animated;
+  }
+
+  // Эффект печатания
+  function typewriterEffect(el) {
+    // Если уже анимировали — не дублируем
+    if (el.dataset.animated) return;
+    el.dataset.animated = true;
+
+    const text = el.dataset.originalText;
+    // Очищаем и строим спаны заново
+    el.innerHTML = '';
     text.split(' ').forEach((word, wi) => {
       const w = document.createElement('span');
       w.className = 'word';
@@ -39,29 +62,33 @@ document.addEventListener('DOMContentLoaded', () => {
         c.textContent = ch;
         w.appendChild(c);
       });
-      element.appendChild(w);
+      el.appendChild(w);
       if (wi < text.split(' ').length - 1) {
         const sp = document.createElement('span');
         sp.className = 'space';
         sp.innerHTML = '&nbsp;';
-        element.appendChild(sp);
+        el.appendChild(sp);
       }
     });
 
-    anime.timeline({ 
-      targets: element.querySelectorAll('.char'),
+    // Анимация
+    anime.timeline({
+      targets: el.querySelectorAll('.char'),
       easing: 'linear',
-      delay: anime.stagger(30)
+      delay: anime.stagger(50),
     }).add({
       opacity: [0, 1],
-      duration: 30
+      duration: 50,
     });
   }
 
-  document.querySelectorAll('.question').forEach(q => {
+  // Наведение на вопрос
+  questions.forEach(q => {
     q.addEventListener('mouseenter', () => {
       const idx = q.dataset.index;
-      document.querySelectorAll('.answer').forEach(a => a.classList.remove('active'));
+      // Сброс всех
+      answers.forEach(resetAnswer);
+      // Активируем нужный
       const ans = document.querySelector(`.answer[data-index="${idx}"]`);
       if (ans) {
         ans.classList.add('active');
@@ -70,11 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.querySelector('.left_container')
-          .addEventListener('mouseleave', () => {
-    document.querySelectorAll('.answer').forEach(a => a.classList.remove('active'));
+  // Уход мыши — сбрасываем все
+  leftCont.addEventListener('mouseleave', () => {
+    answers.forEach(resetAnswer);
   });
 });
+
 
 // ==== PHONE_NUMBER_VALIDATION: on _contact_ section.
   const phoneInput = document.getElementById("phoneInput");
@@ -221,7 +249,6 @@ const images = document.querySelectorAll('.cover_service_images');
   });
 
 
-  
 //  ======= CONTACT SECTION - MODAL WINDOW
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('sendButton').addEventListener('click', (e) => {

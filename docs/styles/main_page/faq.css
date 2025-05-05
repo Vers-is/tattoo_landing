@@ -87,6 +87,7 @@
     font-weight: 700;
     position: absolute;
     text-transform: none;
+    display: none;
     top: 0;
     left: 0; 
     width: 100%; 
@@ -100,6 +101,7 @@
     z-index: 1000;
     opacity: 1;
     visibility: visible;
+    display: block;
 }
   
 .word {
@@ -116,7 +118,6 @@
     display: inline-block;
     width: 0.5em;
 }
-  
 
 /* ======  HOVER EFFECTS ====== */
 
@@ -133,3 +134,6 @@
     /* filter: blur(2px); */
     filter: brightness(0.3);
 }
+
+
+  
