@@ -90,122 +90,126 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.custom-select').forEach(select => {
+    const current = select.querySelector('.current-cover');
+    const optionsList = select.querySelector('.options');
+    const options = optionsList.querySelectorAll('li');
 
-      document.querySelectorAll('.custom-select').forEach(select => {
-            const current = select.querySelector('.current-cover');
-            const optionsList = select.querySelector('.options');
-            const options = optionsList.querySelectorAll('li');
-        
-            current.dataset.value = '';
-        
-            current.addEventListener('click', e => {
-              e.stopPropagation();
-              select.classList.toggle('open');
-            });
-        
-            options.forEach(option => {
-              option.addEventListener('click', e => {
-                e.stopPropagation();
-                current.textContent = option.textContent;
-                current.dataset.value = option.dataset.value;
-                select.classList.remove('open');
-              });
-            });
-          });
-        
-          document.addEventListener('click', () => {
-            document.querySelectorAll('.custom-select.open').forEach(s => {
-              s.classList.remove('open');
-            });
-          });
+    current.dataset.value = '';
 
-      const days = [...document.querySelectorAll('.day')];
-      const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-      const weekDays = ['sun','mon','tue','wed','thu','fri','sat'];
-      let selectedDate = null;
-      let selectedTime = null;
-  
-      const phoneInput = document.getElementById('phoneInput');
-      const phoneError = document.getElementById('phoneError');
-  
-      function validatePhone(phone) {
-        const phoneRegex = /^[0-9]{10,15}$/;
-        return phoneRegex.test(phone);
-      }
-  
-      const now = new Date();
-      document.getElementById('month-name').textContent = months[now.getMonth()];
-      days.forEach((el, i) => {
-        const d = new Date(now);
-        d.setDate(now.getDate() + i);
-        el.querySelector('.weekday').textContent = weekDays[d.getDay()];
-        el.querySelector('.date').textContent = d.getDate();
-        el.onclick = () => {
-          days.forEach(d => d.classList.remove('selected'));
-          el.classList.add('selected');
-          selectedDate = `${d.getDate()} ${months[d.getMonth()]}`;
-        };
-      });
-  
-      const times = [...document.querySelectorAll('.time')];
-      times.forEach(el => el.onclick = () => {
-        times.forEach(t => t.classList.remove('selected'));
-        el.classList.add('selected');
-        selectedTime = el.textContent;
-      });
-  
-      document.getElementById('book').addEventListener('click', e => {
-  e.preventDefault();
-
-  const phone   = phoneInput.value.trim();
-  const service = document.querySelector('#serviceSelect .current-cover').dataset.value;
-  const artist  = document.querySelector('#artistSelect .current-cover').dataset.value;
-
-  if (!validatePhone(phone)) {
-    phoneError.textContent = 'Please enter a valid phone number (10-15 digits).';
-    phoneError.classList.add('visible');
-    return;
-  } else {
-    phoneError.classList.remove('visible');
-  }
-
-  if (!phone || !service || !selectedDate || !selectedTime) {
-    document.querySelector('#modal .modal-box p').textContent = 'Please fill in all required fields.';
-    document.getElementById('modal').classList.add('visible');
-    return;
-  }
-
-  phoneInput.value = '';
-  document.querySelectorAll('.custom-select').forEach(sel => {
-    const cur = sel.querySelector('.current-cover');
-    cur.textContent   = sel.id === 'serviceSelect' ? 'Service' : 'Artist';
-    cur.dataset.value = '';
-  });
-  days.forEach(d => d.classList.remove('selected'));
-  times.forEach(t => t.classList.remove('selected'));
-  selectedDate = selectedTime = null;
-
-  document.getElementById('modal').classList.add('visible');
-});
-
-  
-      document.getElementById('closeModal').onclick = () => {
-        document.getElementById('modal').classList.remove('visible');
-      };
+    current.addEventListener('click', e => {
+      e.stopPropagation();
+      select.classList.toggle('open');
     });
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const params      = new URLSearchParams(window.location.search);
-    const artistParam = params.get('artist') || params.get('Artist');
-    if (artistParam) {
-      const wrapper = document.querySelector('#artistSelect');
-      const option  = wrapper.querySelector(`.options li[data-value="${artistParam}"]`);
-      if (option) {
-        const curCover = wrapper.querySelector('.current-cover');
-        curCover.textContent   = option.textContent;
-        curCover.dataset.value = option.dataset.value;
-      }
+    options.forEach(option => {
+      option.addEventListener('click', e => {
+        e.stopPropagation();
+        current.textContent = option.textContent;
+        current.dataset.value = option.dataset.value;
+        select.classList.remove('open');
+      });
+    });
+  });
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.custom-select.open').forEach(s => {
+      s.classList.remove('open');
+    });
+  });
+
+  // calendar
+  const days = [...document.querySelectorAll('.day')];
+  const months = ['January','February','March','April','May','June','July','Augest','September','October','November','December'];
+  const weekDays = ['sun','mon','tue','wed','thu','fri','sat'];
+  let selectedDate = null;
+  let selectedTime = null;
+
+  // phone
+  const phoneInput = document.getElementById('phoneInput');
+  const phoneError = document.getElementById('phoneError');
+
+  function validatePhone(phone) {
+    const phoneRegex = /^[0-9]{10,15}$/;
+    return phoneRegex.test(phone);
+  }
+
+  // date
+  const now = new Date();
+  document.getElementById('month-name').textContent = months[now.getMonth()];
+  days.forEach((el, i) => {
+    const d = new Date(now);
+    d.setDate(now.getDate() + i);
+    el.querySelector('.weekday').textContent = weekDays[d.getDay()];
+    el.querySelector('.date').textContent = d.getDate();
+    el.onclick = () => {
+      days.forEach(d => d.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedDate = `${d.getDate()} ${months[d.getMonth()]}`;
+    };
+  });
+
+  // time
+  const times = [...document.querySelectorAll('.time')];
+  times.forEach(el => el.onclick = () => {
+    times.forEach(t => t.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedTime = el.textContent;
+  });
+
+  // booking button
+  document.getElementById('book').addEventListener('click', e => {
+    e.preventDefault();
+
+    const phone   = phoneInput.value.trim();
+    const service = document.querySelector('#serviceSelect .current-cover').dataset.value;
+    const artist  = document.querySelector('#artistSelect .current-cover').dataset.value;
+
+    if (!validatePhone(phone)) {
+      phoneError.textContent = 'Please enter a valid phone number (10-15 digits).';
+      phoneError.classList.add('visible');
+      return;
+    } else {
+      phoneError.classList.remove('visible');
     }
+
+    if (!phone || !service || !selectedDate || !selectedTime) {
+      document.querySelector('#modal .modal-box p').textContent = 'Please fill in all required fields.';
+      document.getElementById('modal').classList.add('visible');
+      return;
+    }
+
+    // clean the form
+    phoneInput.value = '';
+    document.querySelectorAll('.custom-select').forEach(sel => {
+      const cur = sel.querySelector('.current-cover');
+      cur.textContent   = sel.id === 'serviceSelect' ? 'Service' : 'Artist';
+      cur.dataset.value = '';
+    });
+    days.forEach(d => d.classList.remove('selected'));
+    times.forEach(t => t.classList.remove('selected'));
+    selectedDate = selectedTime = null;
+
+    document.getElementById('modal').classList.add('visible');
+  });
+
+  // closing modal window
+  document.getElementById('closeModal').onclick = () => {
+    document.getElementById('modal').classList.remove('visible');
+  };
+
+  // artist from URL
+  const params      = new URLSearchParams(window.location.search);
+  const artistParam = params.get('artist') || params.get('Artist');
+  if (artistParam) {
+    const wrapper = document.querySelector('#artistSelect');
+    const option  = wrapper.querySelector(`.options li[data-value="${artistParam}"]`);
+    if (option) {
+      const curCover = wrapper.querySelector('.current-cover');
+      curCover.textContent   = option.textContent;
+      curCover.dataset.value = option.dataset.value;
+    }
+  }
 });
   </script>
   
