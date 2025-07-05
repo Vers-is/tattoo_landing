@@ -1,331 +1,534 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./styles/main_page/about.css">
-    <link rel="stylesheet" href="./styles/main_page/artists.css">
-    <link rel="stylesheet" href="./styles/main_page/contact.css">
-    <link rel="stylesheet" href="./styles/main_page/faq.css">
-    <link rel="stylesheet" href="./styles/main_page/services.css">
-    <link rel="stylesheet" href="./styles/main_page/footer.css">
-    <link rel="stylesheet" href="./styles/main_page/hero.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/main_page/about.css" />
+    <link rel="stylesheet" href="./styles/main_page/artists.css" />
+    <link rel="stylesheet" href="./styles/main_page/contact.css" />
+    <link rel="stylesheet" href="./styles/main_page/faq.css" />
+    <link rel="stylesheet" href="./styles/main_page/services.css" />
+    <link rel="stylesheet" href="./styles/main_page/footer.css" />
+    <link rel="stylesheet" href="./styles/main_page/hero.css" />
+    <link rel="stylesheet" href="./styles/mobile_version.css" />
     <script src="../node_modules/animejs/lib/anime.min.cjs" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" 
-    crossorigin="anonymous" 
-    referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
     <script src="./app.js" defer></script>
 
-     <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./icons/icon.png?v=2"" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/icon.png?v=2""
+    />
 
     <title>Bona Tattoo</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <!-- =======    HERO SECTION    ======= -->
-        <section class="hero" id="hero">
-            <div class="nav-wrapper">
-                <nav>
-                    <div class="logo_convert"> <!-- >>> NAV: logo -->
-                        <img src="./icons/logo.PNG" alt="Logo" class="logo_icon">
-                        <a href="#hero" class="logo">bona<br>tattoo</a>
-                    </div>
-
-                    <div class="nav_links"> <!-- >>> NAV: about | services | artists | faq -->
-                        <a href="#about" class="nav_link">we are</a>
-                        <a href="#services" class="nav_link">services</a>
-                        <a href="#artists" class="nav_link">artists</a>
-                        <a href="#faq" class="nav_link">faq</a>
-                    </div>
-
-                    <div class="phone"> <!-- >>> NAV: phone_number -->
-                        <img src="./icons/phone.svg" alt="phone" class="phone_icon">
-                        <a href="https://api.whatsapp.com/send?phone=2025550104" target="_blank" rel="noopener" class="phone_number">202 555 0104</a>
-                    </div>
-                </nav>
-            </div>
-            
-            <div class="tattoo-video-overlay">
-                <video src="./images/back_video.mp4" autoplay muted loop preload="auto"></video>
-                <div class="video-caption">
-                <div class="logo">bona tattoo</div>
-                <div class="subtitle">care for you</div>
-                <img src="./icons/logo.PNG" alt="Logo" class="logo_icon">
-
-                </div>
+      <!-- =======    HERO SECTION    ======= -->
+      <section class="hero" id="hero">
+        <div class="nav-wrapper">
+          <nav>
+            <div class="logo_convert">
+              <!-- >>> NAV: logo -->
+              <img src="./icons/logo.PNG" alt="Logo" class="logo_icon" />
+              <a href="#hero" class="logo">bona<br />tattoo</a>
             </div>
 
-            <div class="title"> <!-- >>> HERO: title -->
-                <div class="center">your tattoo is<br>about <span class="italian">you!</span></div>
-                <div class="start">let us make it</div>
-                <div class="end"><span class="italian">uniquely</span> yours</div>
+            <div class="nav_links">
+              <!-- >>> NAV: about | services | artists | faq -->
+              <a href="#about" class="nav_link">we are</a>
+              <a href="#services" class="nav_link">services</a>
+              <a href="#artists" class="nav_link">artists</a>
+              <a href="#faq" class="nav_link">faq</a>
             </div>
-            
-            <div class="hero_link"> <!-- >>> HERO: button - book an appointment -->
-                <div>press to</div>
-                <a href="./html/appointment.html" class="green link">book an appointment</a>
-                <img class="arrow_icon" src="./icons/arrow.svg" alt="">
-            </div>
-              
-            <div class="hero_image"> <!-- >>> HERO: background -->
-                <img src="./images/hero_image.PNG" alt="Hero" />
-            </div>
-        </section>
 
-        <!-- =======    ABOUT US SECTION    ======= -->
-        <section class="about" id="about">
-            <div class="title">we are...</div> 
-
-            <div class="grid-container">
-                <div class="about_row">
-                    <svg class="border-svg" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
-                        <rect class="border-path" width="100%" height="100%" fill="none" stroke="#B1FFB9" stroke-width="2"/>
-                    </svg>
-                    <div class="about_icon">#.</div>
-                    <div class="about_title">tailor-made tattoo<br>for your body <span class="italian">and</span> soul</div>
-                    <div class="about_description">Every person is different and so every sottoo has to be unique: Bona Tattoo cores about your values, beliets and ideos and turn it into a beautiful piece of ort which is tailor made as per your body, Our super -talented teom will suggest the right size and the placement on the tattoo in such a way that will only extend the beauty of your body and soul.</div>
-                </div>
-
-                <div class="about_row">
-                    
-                    <div class="about_icon">>.</div>
-                    <div class="about_title">no more hassle finding a right tattoo <span class="italian">artist</span></div>
-                    <div class="about_description">Fraing a right tatic artst can be confurg and tedious, At Bara Tattoo we cater a diverse tattico art portíoio. We are a team of lo award wring tattoo artists expertise in aimost every known genre of tattoo art. Scroll to to explore the work of the best tattoo studio</div>
-                </div>
-                
-                <div class="about_row">
-                   
-                    <div class="about_icon">~.</div>
-                    <div class="about_title">a brand you can trust for <span class="italian">lifetime</span></div>
-                    <div class="about_description">Bona tattoo bollaves in grocatuly changing peoples lives through art and creativity. This is what you asperience when you first interact with Alers. It is not just about gatting a tatica, for us, i a about building a life time relatonship with you. Gatting a tattoo from Bona Tattoo Studio is an exporiance.</div>
-                </div>
+            <div class="phone">
+              <!-- >>> NAV: phone_number -->
+              <img src="./icons/phone.svg" alt="phone" class="phone_icon" />
+              <a
+                href="https://api.whatsapp.com/send?phone=2025550104"
+                target="_blank"
+                rel="noopener"
+                class="phone_number"
+                >202 555 0104</a
+              >
             </div>
-        </section>
-
-        <!-- =======    SERVICES SECTION    ======= -->
-        <section class="services" id="services">
-            <div class="title">services</div>
-        
-            <!-- Картинки с data-service -->
-            <div class="cover_service_images" data-service="1">
-            <img src="./images/tattoo/tattoo_services/tattoo1.jpg" alt="" class="service_image">
-            <img src="./images/tattoo/tattoo_services/tattoo2.jpg" alt="" class="service_image">
-            </div>
-            <div class="cover_service_images" data-service="2">
-            <img src="./images/tattoo/tattoo_services/fix_tattoo1.png" alt="" class="service_image">
-            <img src="./images/tattoo/tattoo_services/fix_tattoo2.png" alt="" class="service_image">
-            </div>
-            <div class="cover_service_images" data-service="3">
-            <img src="./images/tattoo/tattoo_services/cover_tattoo1.jpg" alt="" class="service_image">
-            <img src="./images/tattoo/tattoo_services/cover_tattoo2.jpg" alt="" class="service_image">
-            </div>
-            <div class="cover_service_images" data-service="4">
-            <img src="./images/tattoo/tattoo_services/scars1.jpg" alt="" class="service_image">
-            <img src="./images/tattoo/tattoo_services/scars2.jpg" alt="" class="service_image">
-            </div>
-            <div class="cover_service_images" data-service="5">
-            <img src="./images/tattoo/tattoo_services/makeup1.jpg" alt="" class="service_image">
-            <img src="./images/tattoo/tattoo_services/makeup2.jpg" alt="" class="service_image">
-            </div>
-            <div class="cover_service_images" data-service="6">
-            <img src="./images/tattoo/tattoo_services/laser1.png" alt="" class="service_image">
-            <img src="./images/tattoo/tattoo_services/laser2.png" alt="" class="service_image">
-            </div>
-        
-            <div class="grid-container">
-            <div class="row" data-service="1">
-                <div class="num">1.</div>
-                <div class="services_title">Tattoo</div>
-                <div class="pricing">from $49</div>
-                <img class="arrow_icon" src="./icons/grey_arrow.svg" data-grey="./icons/grey_arrow.svg" data-green="./icons/arrow.svg" alt="">
-            </div>
-            <div class="row" data-service="2">
-                <div class="num">2.</div>
-                <div class="services_title">Fixing a Bad Tattoo</div>
-                <div class="pricing">from $99</div>
-                <img class="arrow_icon" src="./icons/grey_arrow.svg" data-grey="./icons/grey_arrow.svg" data-green="./icons/arrow.svg" alt="">
-            </div>
-            <div class="row" data-service="3">
-                <div class="num">3.</div>
-                <div class="services_title">Cover up tattoo</div>
-                <div class="pricing">from $120</div>
-                <img class="arrow_icon" src="./icons/grey_arrow.svg" data-grey="./icons/grey_arrow.svg" data-green="./icons/arrow.svg" alt="">
-            </div>
-            <div class="row" data-service="4">
-                <div class="num">4.</div>
-                <div class="services_title">Covering scars</div>
-                <div class="pricing">from $65</div>
-                <img class="arrow_icon" src="./icons/grey_arrow.svg" data-grey="./icons/grey_arrow.svg" data-green="./icons/arrow.svg" alt="">
-            </div>
-            <div class="row" data-service="5">
-                <div class="num">5.</div>
-                <div class="services_title">Permanent makeup</div>
-                <div class="pricing">from $35</div>
-                <img class="arrow_icon" src="./icons/grey_arrow.svg" data-grey="./icons/grey_arrow.svg" data-green="./icons/arrow.svg" alt="">
-            </div>
-            <div class="row" data-service="6">
-                <div class="num">6.</div>
-                <div class="services_title">Laser removal</div>
-                <div class="pricing">from $139</div>
-                <img class="arrow_icon" src="./icons/grey_arrow.svg" data-grey="./icons/grey_arrow.svg" data-green="./icons/arrow.svg" alt="">
-            </div>
-            </div>
-        </section>
-        
-        <!-- =======    ARTISTS SECTION    ======= -->
-        <section class="artists">
-            <div class="title">artists</div>
-
-            <div class="cards_cover" id="artists">
-                <div class="card">
-                    <img src="./images/artists/hector.JPG" alt="" class="artist_image">
-                    <div class="artist_name">hector</div>
-                    <div class="subtitle_cover">
-                        <div class="subtitle_title">Specializes in geometric and symmetrical tattoos.</div>
-                        <div class="subtitle_text">Hector's incredible talent, attention to detail, and precise line work, combined with an incredibly positive attitude, make him one of the shop's most sought-after artists.</div>
-                    </div>
-                    <div class="gallery_cover">
-                        <a href="./html/artists/hector.html" class="gallery">view gallery</a>
-                        <img class="arrow_icon" src="./icons/arrow.svg" alt="">
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="./images/artists/natasha.JPG" alt="" class="artist_image">
-                    <div class="artist_name">natasha</div>
-                    <div class="subtitle_cover"> 
-                        <div class="subtitle_title">Specializes in gothic tattoo style.</div>
-                        <div class="subtitle_text">Natashia says, "Each person I work with ! see as a unique canvas with the intent to be adorned. Notking truly compares to the feeling of giving my clients a meaningful and beautiful tattoo for them to cherish on their life's journey."</div>
-                    </div>  
-                    <div class="gallery_cover">
-                        <a href="./html/artists/natasha.html" class="gallery">view gallery</a>
-                        <img class="arrow_icon" src="./icons/arrow.svg" alt="">
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="./images/artists/rob.JPG" alt="" class="artist_image">
-                    <div class="artist_name">rob</div>
-                    <div class="subtitle_cover">
-                        <div class="subtitle_title">Specializes in horror-themed tattoos.</div>
-                        <div class="subtitle_text">Rob met Hector while they traded off window shifts at another shop. They only put the best artists in the window, so when Bang Bang opened his own place, Rob was one of the first hires.</div>
-                    </div>
-                    <div class="gallery_cover">
-                        <a href="./html/artists/rob.html" class="gallery">view gallery</a>
-                        <img class="arrow_icon" src="./icons/arrow.svg" alt="">
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="./images/artists/kevin.JPG" alt="" class="artist_image">
-                    <div class="artist_name">kevin</div>
-                    <div class="subtitle_cover">
-                        <div class="subtitle_title">Specializes in colorful illustrative designs.</div>
-                        <div class="subtitle_text">His structured yet organic approach creates tattoos that feel timeless and deeply personal. Clients often describe working with him as both calming and empowering — a collaboration where every line carries intention.</div>
-                    </div>
-                    <div class="gallery_cover">
-                        <a href="./html/artists/kevin.html" class="gallery">view gallery</a>
-                        <img class="arrow_icon" src="./icons/arrow.svg" alt="">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- =======    CONTACT SECTION    ======= -->
-        <section class="contact" id="contact">
-            <div class="logo_title_cover">
-                  <img src="./icons/logo.PNG" alt="Logo" class="logo_icon">
-                  <div class="title">ready to<br>get tattooed?</div>
-            </div>
-            <div class="input_scope">
-                <input type="tel" id="phoneInput" class="input" placeholder="Phone number">
-                <div id="phoneError" class="error-message"></div>
-                <div class="hint">By sending your number, you are agreeing to our Data Protection Statement.</div>
-                <div class="send_cover">
-                    <a href="" class="send_button" id="sendButton">send</a>
-                    <img class="arrow_icon" src="./icons/arrow.svg" alt="">
-                </div>
-            </div>
-        </section>
-
-        <div id="modal">
-            <div class="modal-box">
-                <p>Your data has been sent!</p>
-                <button id="closeModal">OKAY</button>
-            </div>
+          </nav>
         </div>
 
-        <!-- =======    FAQ SECTION    ======= -->
-        <section class="faq">
-            <div class="title" id="faq">faq</div>
-            <div class="faq_container">
-              
-              <div class="left_container">
-                <div class="question" data-index="0">How do I book an appointment?</div>
-                <div class="question" data-index="1">Does it hurt?</div>
-                <div class="question" data-index="2">How old do I have to be to get a tattoo?</div>
-                <div class="question" data-index="3">Can I get a tattoo if I’m sick?</div>
-                <div class="question"  data-index="4">Can I bring a friend?</div>
+        <div class="tattoo-video-overlay">
+          <video
+            src="./images/back_video.mp4"
+            autoplay
+            muted
+            loop
+            preload="auto"></video>
+          <div class="video-caption">
+            <div class="logo">bona tattoo</div>
+            <div class="subtitle">care for you</div>
+            <img src="./icons/logo.PNG" alt="Logo" class="logo_icon" />
+          </div>
+        </div>
+
+        <div class="title">
+          <!-- >>> HERO: title -->
+          <div class="center">
+            your tattoo is<br />about <span class="italian">you!</span>
+          </div>
+          <div class="start">let us make it</div>
+          <div class="end"><span class="italian">uniquely</span> yours</div>
+        </div>
+
+        <div class="hero_link">
+          <!-- >>> HERO: button - book an appointment -->
+          <div>press to</div>
+          <a href="./html/appointment.html" class="green link"
+            >book an appointment</a
+          >
+          <img class="arrow_icon" src="./icons/arrow.svg" alt="" />
+        </div>
+
+        <div class="hero_image">
+          <!-- >>> HERO: background -->
+          <img src="./images/hero_image.PNG" alt="Hero" />
+        </div>
+      </section>
+
+      <!-- =======    ABOUT US SECTION    ======= -->
+      <section class="about" id="about">
+        <div class="title">we are...</div>
+
+        <div class="grid-container">
+          <div class="about_row">
+            <svg
+              class="border-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              width="0"
+              height="0">
+              <rect
+                class="border-path"
+                width="100%"
+                height="100%"
+                fill="none"
+                stroke="#B1FFB9"
+                stroke-width="2" />
+            </svg>
+            <div class="about_icon">#.</div>
+            <div class="about_title">
+              tailor-made tattoo<br />for your body
+              <span class="italian">and</span> soul
+            </div>
+            <div class="about_description">
+              Every person is different and so every sottoo has to be unique:
+              Bona Tattoo cores about your values, beliets and ideos and turn it
+              into a beautiful piece of ort which is tailor made as per your
+              body, Our super -talented teom will suggest the right size and the
+              placement on the tattoo in such a way that will only extend the
+              beauty of your body and soul.
+            </div>
+          </div>
+
+          <div class="about_row">
+            <div class="about_icon">>.</div>
+            <div class="about_title">
+              no more hassle finding a right tattoo
+              <span class="italian">artist</span>
+            </div>
+            <div class="about_description">
+              Fraing a right tatic artst can be confurg and tedious, At Bara
+              Tattoo we cater a diverse tattico art portíoio. We are a team of
+              lo award wring tattoo artists expertise in aimost every known
+              genre of tattoo art. Scroll to to explore the work of the best
+              tattoo studio
+            </div>
+          </div>
+
+          <div class="about_row">
+            <div class="about_icon">~.</div>
+            <div class="about_title">
+              a brand you can trust for <span class="italian">lifetime</span>
+            </div>
+            <div class="about_description">
+              Bona tattoo bollaves in grocatuly changing peoples lives through
+              art and creativity. This is what you asperience when you first
+              interact with Alers. It is not just about gatting a tatica, for
+              us, i a about building a life time relatonship with you. Gatting a
+              tattoo from Bona Tattoo Studio is an exporiance.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======    SERVICES SECTION    ======= -->
+      <section class="services" id="services">
+        <div class="title">services</div>
+
+        <!-- Картинки с data-service -->
+        <div class="cover_service_images" data-service="1">
+          <img
+            src="./images/tattoo/tattoo_services/tattoo1.jpg"
+            alt=""
+            class="service_image" />
+          <img
+            src="./images/tattoo/tattoo_services/tattoo2.jpg"
+            alt=""
+            class="service_image" />
+        </div>
+        <div class="cover_service_images" data-service="2">
+          <img
+            src="./images/tattoo/tattoo_services/fix_tattoo1.png"
+            alt=""
+            class="service_image" />
+          <img
+            src="./images/tattoo/tattoo_services/fix_tattoo2.png"
+            alt=""
+            class="service_image" />
+        </div>
+        <div class="cover_service_images" data-service="3">
+          <img
+            src="./images/tattoo/tattoo_services/cover_tattoo1.jpg"
+            alt=""
+            class="service_image" />
+          <img
+            src="./images/tattoo/tattoo_services/cover_tattoo2.jpg"
+            alt=""
+            class="service_image" />
+        </div>
+        <div class="cover_service_images" data-service="4">
+          <img
+            src="./images/tattoo/tattoo_services/scars1.jpg"
+            alt=""
+            class="service_image" />
+          <img
+            src="./images/tattoo/tattoo_services/scars2.jpg"
+            alt=""
+            class="service_image" />
+        </div>
+        <div class="cover_service_images" data-service="5">
+          <img
+            src="./images/tattoo/tattoo_services/makeup1.jpg"
+            alt=""
+            class="service_image" />
+          <img
+            src="./images/tattoo/tattoo_services/makeup2.jpg"
+            alt=""
+            class="service_image" />
+        </div>
+        <div class="cover_service_images" data-service="6">
+          <img
+            src="./images/tattoo/tattoo_services/laser1.png"
+            alt=""
+            class="service_image" />
+          <img
+            src="./images/tattoo/tattoo_services/laser2.png"
+            alt=""
+            class="service_image" />
+        </div>
+
+        <div class="grid-container">
+          <div class="row" data-service="1">
+            <div class="num">1.</div>
+            <div class="services_title">Tattoo</div>
+            <div class="pricing">from $49</div>
+            <img
+              class="arrow_icon"
+              src="./icons/grey_arrow.svg"
+              data-grey="./icons/grey_arrow.svg"
+              data-green="./icons/arrow.svg"
+              alt="" />
+          </div>
+          <div class="row" data-service="2">
+            <div class="num">2.</div>
+            <div class="services_title">Fixing a Bad Tattoo</div>
+            <div class="pricing">from $99</div>
+            <img
+              class="arrow_icon"
+              src="./icons/grey_arrow.svg"
+              data-grey="./icons/grey_arrow.svg"
+              data-green="./icons/arrow.svg"
+              alt="" />
+          </div>
+          <div class="row" data-service="3">
+            <div class="num">3.</div>
+            <div class="services_title">Cover up tattoo</div>
+            <div class="pricing">from $120</div>
+            <img
+              class="arrow_icon"
+              src="./icons/grey_arrow.svg"
+              data-grey="./icons/grey_arrow.svg"
+              data-green="./icons/arrow.svg"
+              alt="" />
+          </div>
+          <div class="row" data-service="4">
+            <div class="num">4.</div>
+            <div class="services_title">Covering scars</div>
+            <div class="pricing">from $65</div>
+            <img
+              class="arrow_icon"
+              src="./icons/grey_arrow.svg"
+              data-grey="./icons/grey_arrow.svg"
+              data-green="./icons/arrow.svg"
+              alt="" />
+          </div>
+          <div class="row" data-service="5">
+            <div class="num">5.</div>
+            <div class="services_title">Permanent makeup</div>
+            <div class="pricing">from $35</div>
+            <img
+              class="arrow_icon"
+              src="./icons/grey_arrow.svg"
+              data-grey="./icons/grey_arrow.svg"
+              data-green="./icons/arrow.svg"
+              alt="" />
+          </div>
+          <div class="row" data-service="6">
+            <div class="num">6.</div>
+            <div class="services_title">Laser removal</div>
+            <div class="pricing">from $139</div>
+            <img
+              class="arrow_icon"
+              src="./icons/grey_arrow.svg"
+              data-grey="./icons/grey_arrow.svg"
+              data-green="./icons/arrow.svg"
+              alt="" />
+          </div>
+        </div>
+      </section>
+
+      <!-- =======    ARTISTS SECTION    ======= -->
+      <section class="artists">
+        <div class="title">artists</div>
+
+        <div class="cards_cover" id="artists">
+          <div class="card">
+            <img
+              src="./images/artists/hector.JPG"
+              alt=""
+              class="artist_image" />
+            <div class="artist_name">hector</div>
+            <div class="subtitle_cover">
+              <div class="subtitle_title">
+                Specializes in geometric and symmetrical tattoos.
               </div>
-              
-              <div class="right_container">
-                
-                <div class="answer" data-index="0">
-                  To book an appointment, please fill out the form on our website or call us at (123) 456‑7890.
-                </div>
-                <div class="answer" data-index="1">
-                  A slight discomfort is possible, but our artists do their best to make the process as comfortable as possible.
-                </div>
-                <div class="answer" data-index="2">
-                  You must be at least 18 years old and present a valid ID.
-                </div>
-                <div class="answer"  data-index="3">It's best to wait until you’re feeling well, as your immune system needs to be strong for proper healing.</div>
-                <div class="answer" data-index="4">Yes, you’re welcome to bring one friend for support during your session.</div>
+              <div class="subtitle_text">
+                Hector's incredible talent, attention to detail, and precise
+                line work, combined with an incredibly positive attitude, make
+                him one of the shop's most sought-after artists.
               </div>
-          
             </div>
-          </section>
-          
+            <div class="gallery_cover">
+              <a href="./html/artists/hector.html" class="gallery"
+                >view gallery</a
+              >
+              <img class="arrow_icon" src="./icons/arrow.svg" alt="" />
+            </div>
+          </div>
 
-        <!-- =======    FOOTER SECTION    ======= -->
-        <footer class="footer">
-            <div class="logo_convert">
-                <img src="./icons/logo.PNG" alt="Logo" class="logo_icon">
-                <a href="#hero" class="logo">bona<br>tattoo</a>
+          <div class="card">
+            <img
+              src="./images/artists/natasha.JPG"
+              alt=""
+              class="artist_image" />
+            <div class="artist_name">natasha</div>
+            <div class="subtitle_cover">
+              <div class="subtitle_title">
+                Specializes in gothic tattoo style.
+              </div>
+              <div class="subtitle_text">
+                Natashia says, "Each person I work with ! see as a unique canvas
+                with the intent to be adorned. Notking truly compares to the
+                feeling of giving my clients a meaningful and beautiful tattoo
+                for them to cherish on their life's journey."
+              </div>
             </div>
+            <div class="gallery_cover">
+              <a href="./html/artists/natasha.html" class="gallery"
+                >view gallery</a
+              >
+              <img class="arrow_icon" src="./icons/arrow.svg" alt="" />
+            </div>
+          </div>
 
-            <div class="footer_element">
-                <div class="subtitle">locations</div>
-                <a target="_blank" href="https://www.google.com/maps/@35.7040744,139.5577317,3a,90y,288.14h,67.46t/data=!3m7!1e1!3m5!1sgT28ssf0BB2LxZ63JNcL1w!2e0!3e5!7i13312!8i6656" class="footer_link">6391 Elgin St. Celina, Delaware 10299</a>
-                <a target="_blank" href="https://youtu.be/dQw4w9WgXcQ?si=hz5d7TJ1rzREez01" class="footer_link">62 Grand Street 
-                    New York NY 10013</a>
+          <div class="card">
+            <img src="./images/artists/rob.JPG" alt="" class="artist_image" />
+            <div class="artist_name">rob</div>
+            <div class="subtitle_cover">
+              <div class="subtitle_title">
+                Specializes in horror-themed tattoos.
+              </div>
+              <div class="subtitle_text">
+                Rob met Hector while they traded off window shifts at another
+                shop. They only put the best artists in the window, so when Bang
+                Bang opened his own place, Rob was one of the first hires.
+              </div>
             </div>
+            <div class="gallery_cover">
+              <a href="./html/artists/rob.html" class="gallery">view gallery</a>
+              <img class="arrow_icon" src="./icons/arrow.svg" alt="" />
+            </div>
+          </div>
 
-            <div class="footer_element">
-                <div class="subtitle">contacts</div>
-                <a href="" class="footer_link">202 555 0104</a>
-                <a href="" class="footer_link">505 555 0104</a>
-                <a target="_blank" href="mailto:bonatatoo@gmail.com?subject=Hi&body=i whant tattoo!" class="footer_link">bonatatoo@gmail.com</a>
+          <div class="card">
+            <img src="./images/artists/kevin.JPG" alt="" class="artist_image" />
+            <div class="artist_name">kevin</div>
+            <div class="subtitle_cover">
+              <div class="subtitle_title">
+                Specializes in colorful illustrative designs.
+              </div>
+              <div class="subtitle_text">
+                His structured yet organic approach creates tattoos that feel
+                timeless and deeply personal. Clients often describe working
+                with him as both calming and empowering — a collaboration where
+                every line carries intention.
+              </div>
             </div>
+            <div class="gallery_cover">
+              <a href="./html/artists/kevin.html" class="gallery"
+                >view gallery</a
+              >
+              <img class="arrow_icon" src="./icons/arrow.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <div class="footer_element">
-                <div class="subtitle">follow</div>
-                <div class="contact_icons">
-                    <a target="_blank" href="https://www.instagram.com/p/DBQB1Bqthuq/?igsh=MWRocTUwYnRtbjVpeQ==" class="footer_link"><img src="./icons/instagram.svg" alt="" class="contact_icon"></a>
-                    <a target="_blank" href="https://x.com/catsilcats/status/1912566660537700710?s=46" class="footer_link"><img src="./icons/twitter.svg" alt="" class="contact_icon"></a>
-                    <a target="_blank" href="https://facebook.com/groups/2248738708786554/" class="footer_link"><img src="./icons/facebook.svg" alt="" class="contact_icon"></a>
-                </div> 
+      <!-- =======    CONTACT SECTION    ======= -->
+      <section class="contact" id="contact">
+        <div class="logo_title_cover">
+          <img src="./icons/logo.PNG" alt="Logo" class="logo_icon" />
+          <div class="title">ready to<br />get tattooed?</div>
+        </div>
+        <div class="input_scope">
+          <input
+            type="tel"
+            id="phoneInput"
+            class="input"
+            placeholder="Phone number" />
+          <div id="phoneError" class="error-message"></div>
+          <div class="hint">
+            By sending your number, you are agreeing to our Data Protection
+            Statement.
+          </div>
+          <div class="send_cover">
+            <a href="" class="send_button" id="sendButton">send</a>
+            <img class="arrow_icon" src="./icons/arrow.svg" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <div id="modal">
+        <div class="modal-box">
+          <p>Your data has been sent!</p>
+          <button id="closeModal">OKAY</button>
+        </div>
+      </div>
+
+      <!-- =======    FAQ SECTION    ======= -->
+      <section class="faq">
+        <div class="title" id="faq">faq</div>
+        <div class="faq_container">
+          <div class="left_container">
+            <div class="question" data-index="0">
+              How do I book an appointment?
             </div>
-        </footer>
-        
+            <div class="question" data-index="1">Does it hurt?</div>
+            <div class="question" data-index="2">
+              How old do I have to be to get a tattoo?
+            </div>
+            <div class="question" data-index="3">
+              Can I get a tattoo if I’m sick?
+            </div>
+            <div class="question" data-index="4">Can I bring a friend?</div>
+          </div>
+
+          <div class="right_container">
+            <div class="answer" data-index="0">
+              To book an appointment, please fill out the form on our website or
+              call us at (123) 456‑7890.
+            </div>
+            <div class="answer" data-index="1">
+              A slight discomfort is possible, but our artists do their best to
+              make the process as comfortable as possible.
+            </div>
+            <div class="answer" data-index="2">
+              You must be at least 18 years old and present a valid ID.
+            </div>
+            <div class="answer" data-index="3">
+              It's best to wait until you’re feeling well, as your immune system
+              needs to be strong for proper healing.
+            </div>
+            <div class="answer" data-index="4">
+              Yes, you’re welcome to bring one friend for support during your
+              session.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======    FOOTER SECTION    ======= -->
+      <footer class="footer">
+        <div class="logo_convert">
+          <img src="./icons/logo.PNG" alt="Logo" class="logo_icon" />
+          <a href="#hero" class="logo">bona<br />tattoo</a>
+        </div>
+
+        <div class="footer_element">
+          <div class="subtitle">locations</div>
+          <a
+            target="_blank"
+            href="https://www.google.com/maps/@35.7040744,139.5577317,3a,90y,288.14h,67.46t/data=!3m7!1e1!3m5!1sgT28ssf0BB2LxZ63JNcL1w!2e0!3e5!7i13312!8i6656"
+            class="footer_link"
+            >6391 Elgin St. Celina, Delaware 10299</a
+          >
+          <a
+            target="_blank"
+            href="https://youtu.be/dQw4w9WgXcQ?si=hz5d7TJ1rzREez01"
+            class="footer_link"
+            >62 Grand Street New York NY 10013</a
+          >
+        </div>
+
+        <div class="footer_element">
+          <div class="subtitle">contacts</div>
+          <a href="" class="footer_link">202 555 0104</a>
+          <a href="" class="footer_link">505 555 0104</a>
+          <a
+            target="_blank"
+            href="mailto:bonatatoo@gmail.com?subject=Hi&body=i whant tattoo!"
+            class="footer_link"
+            >bonatatoo@gmail.com</a
+          >
+        </div>
+
+        <div class="footer_element">
+          <div class="subtitle">follow</div>
+          <div class="contact_icons">
+            <a
+              target="_blank"
+              href="https://www.instagram.com/p/DBQB1Bqthuq/?igsh=MWRocTUwYnRtbjVpeQ=="
+              class="footer_link"
+              ><img src="./icons/instagram.svg" alt="" class="contact_icon"
+            /></a>
+            <a
+              target="_blank"
+              href="https://x.com/catsilcats/status/1912566660537700710?s=46"
+              class="footer_link"
+              ><img src="./icons/twitter.svg" alt="" class="contact_icon"
+            /></a>
+            <a
+              target="_blank"
+              href="https://facebook.com/groups/2248738708786554/"
+              class="footer_link"
+              ><img src="./icons/facebook.svg" alt="" class="contact_icon"
+            /></a>
+          </div>
+        </div>
+      </footer>
     </main>
-</body>
+  </body>
 </html>
-
-

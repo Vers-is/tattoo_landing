@@ -1,0 +1,48 @@
+@media (max-width: 780px) {
+  .nav_links,
+  .phone,
+  .tattoo-video-overlay {
+    display: none;
+  }
+
+  nav.scrolled {
+    margin-left: 0;
+    background-color: transparent;
+    backdrop-filter: blur(0);
+    padding: 0;
+    width: 80%;
+    height: 15vh;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.696);
+  }
+
+  .hero .title {
+    text-align: start;
+    font-size: 24px;
+  }
+
+  .start {
+    text-align: start;
+  }
+
+  .end {
+    text-align: start;
+  }
+
+  .center {
+    text-align: start;
+  }
+
+  .hero_image img {
+    position: relative;
+    top: -10vh;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+    object-fit: contain;
+  }
+
+  .hero_link {
+    font-size: 16px;
+  }
+}
