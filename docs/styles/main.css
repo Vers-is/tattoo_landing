@@ -195,3 +195,5 @@ input:hover, .custom-select:hover {
 .input_scope:has(.error-message.visible) .input {
     border-bottom: 2px solid rgb(246, 35, 35);
 }
+
+

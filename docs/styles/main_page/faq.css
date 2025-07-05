@@ -131,7 +131,6 @@
 }
 
 .left_container:has(.question:hover) .question {
-    /* filter: blur(2px); */
     filter: brightness(0.3);
 }
 
