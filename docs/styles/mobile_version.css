@@ -1,4 +1,5 @@
 @media (max-width: 780px) {
+  /*  NAV LINKS PROBLEM!!! */
   .nav_links,
   .phone,
   .tattoo-video-overlay,
@@ -7,7 +8,8 @@
   }
 
   .hero .title {
-    font-size: 29px;
+    font-size: clamp(20px, 5vw, 32px);
+    width: 80%;
   }
 
   nav,
@@ -49,18 +51,17 @@
   .about {
     margin-top: -100%;
   }
-
+  /* 
   .about .title,
   .services .title,
   .artists .title,
   .faq .title {
     font-size: 32px;
-  }
+  } */
 
-  .contact .title {
+  /* .contact .title {
     font-size: 24px;
-  }
-
+  } */
 
   .about_row {
     display: flex;
@@ -70,9 +71,9 @@
     z-index: 2000;
   }
 
-  .about_icon {
+  /* .about_icon {
     font-size: 150px;
-  }
+  } */
 
   .about_description,
   .about_title {
@@ -138,7 +139,7 @@
     width: 80%;
     max-width: 100%;
   }
-
+  /* 
   .send_button {
     font-size: 24px;
   }
@@ -149,11 +150,11 @@
 
   input {
     font-size: 20px;
-  }
+  } */
 
-  input::placeholder {
+  /* input::placeholder {
     font-size: 20px;
-  }
+  } */
 
   .faq {
     align-items: start;
@@ -190,7 +191,7 @@
 
   footer .logo {
     text-transform: uppercase;
-    font-size: 30px;
+    /* font-size: 30px; */
     font-weight: 500;
   }
 
@@ -208,7 +209,7 @@
 
   footer .subtitle {
     text-transform: uppercase;
-    font-size: 24px;
+    /* font-size: 24px; */
     margin-bottom: 2vh;
   }
 
@@ -218,19 +219,71 @@
 
   nav.scrolled {
     margin-left: -10vw;
-    background-color: #1c1c1ca7; 
+    background-color: #1c1c1ca7;
     backdrop-filter: blur(5px);
-      padding: 2vh 2vw;
+    padding: 2vh 2vw;
 
     width: 100%;
     height: 15vh;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.696);
-}
+  }
 
-nav {
-  padding: 2vh 2vw;
+  nav {
+    padding: 2vh 2vw;
     display: fixed;
     width: 100%;
     height: 15vh;
-}
+  }
+
+  .hero .title {
+    font-size: clamp(20px, 5vw, 32px);
+    width: 80%;
+  }
+
+  .hero_link {
+    font-size: clamp(16px, 4vw, 20px);
+  }
+
+  .about .title,
+  .services .title,
+  .artists .title,
+  .faq .title {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+
+  .contact .title {
+    font-size: clamp(18px, 5vw, 28px);
+  }
+
+  .about_icon {
+    font-size: clamp(80px, 20vw, 150px);
+  }
+
+  .send_button {
+    font-size: clamp(16px, 5vw, 24px);
+  }
+
+  .hint {
+    font-size: clamp(14px, 4vw, 18px);
+  }
+
+  input {
+    font-size: clamp(16px, 5vw, 20px);
+  }
+
+  input::placeholder {
+    font-size: clamp(16px, 5vw, 20px);
+  }
+
+  .footer_link {
+    font-size: clamp(14px, 4vw, 18px) !important;
+  }
+
+  footer .subtitle {
+    font-size: clamp(16px, 5vw, 24px);
+  }
+
+  footer .logo {
+    font-size: clamp(20px, 6vw, 32px);
+  }
 }
