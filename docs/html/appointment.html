@@ -186,6 +186,29 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('modal').classList.add('visible');
       return;
     }
+  });
+
+document.querySelector('.link_cover2').addEventListener('click', e => {
+    e.preventDefault();
+
+    const phone   = phoneInput.value.trim();
+    const service = document.querySelector('#serviceSelect .current-cover').dataset.value;
+    const artist  = document.querySelector('#artistSelect .current-cover').dataset.value;
+
+    if (!validatePhone(phone)) {
+      phoneError.textContent = 'Please enter a valid phone number (10-15 digits).';
+      phoneError.classList.add('visible');
+      return;
+    } else {
+      phoneError.classList.remove('visible');
+    }
+
+    if (!phone || !service || !selectedDate || !selectedTime) {
+      document.querySelector('#modal .modal-box p').textContent = 'Please fill in all required fields.';
+      document.getElementById('modal').classList.add('visible');
+      return;
+    }
+    
 
     // clean the form
     phoneInput.value = '';
