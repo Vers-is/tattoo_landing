@@ -8,15 +8,14 @@
   }
 
   .hero {
-  height: 130vh;
-  display: flex;
-}
+    height: 130vh;
+    display: flex;
+  }
 
-.hero .title {
-  font-size: clamp(36px, 7vw, 10vw) !important;
-  width: 100vw;
-}
-
+  .hero .title {
+    font-size: clamp(36px, 7vw, 10vw) !important;
+    width: 100vw;
+  }
 
   nav,
   .about,
@@ -294,7 +293,8 @@
   }
 
   .services_title {
-  font-size: clamp(16px, 4vw, 28px);
-}
+    font-size: clamp(16px, 4vw, 28px);
+  }
+
 
 }

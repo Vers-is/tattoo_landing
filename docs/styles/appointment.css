@@ -71,6 +71,12 @@ main {
     gap: 5px;
 }
 
+.link_cover2 {
+    align-self: start;
+    gap: 5px;
+    display: none;
+} 
+
 .left_container {
     display: flex;
     gap: 2vh;

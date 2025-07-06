@@ -1,0 +1,38 @@
+@media (max-width: 780px) {
+  main {
+    flex-direction: column !important;
+    padding-left: 5vw;
+  }
+
+  .link_cover {
+    display: none;
+  }
+  .options {
+    z-index: 1000;
+    padding: 20px 0;
+  }
+
+  .link_cover2 {
+    display: flex;
+  }
+  li {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  input,
+  .custom-select,
+  .options {
+    width: 90%;
+  }
+
+  .description,
+  .hint {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 24px;
+    width: 90%;
+  }
+}
