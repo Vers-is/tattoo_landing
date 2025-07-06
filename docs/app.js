@@ -227,26 +227,34 @@ const images = document.querySelectorAll('.cover_service_images');
 
 
 // ==== NAV: hidden animation on scroll
-  const nav = document.querySelector("nav");
-  const hero = document.getElementById("hero");
-  let lastScrollY = window.scrollY;
+// ==== NAV: hidden animation on scroll
+const nav = document.querySelector("nav");
+const hero = document.getElementById("hero");
+let lastScrollY = window.scrollY;
 
-  window.addEventListener("scroll", () => {
-    const currentScrollY = window.scrollY;
-    const heroBottom = hero.offsetTop + hero.offsetHeight;
+window.addEventListener("scroll", () => {
+  if (window.innerWidth <= 780) {
+    nav.style.transform = "translateY(0)"; 
+    return;
+  }
 
-    if (currentScrollY < heroBottom) {
-      nav.style.transform = "translateY(0)";
-      return;
-    }
+  const currentScrollY = window.scrollY;
+  const heroBottom = hero.offsetTop + hero.offsetHeight;
 
-    if (currentScrollY > lastScrollY) {
-      nav.style.transform = "translateY(-100%)";
-    } else {
-      nav.style.transform = "translateY(0)";
-    }
-    lastScrollY = currentScrollY;
-  });
+  if (currentScrollY < heroBottom) {
+    nav.style.transform = "translateY(0)";
+    return;
+  }
+
+  if (currentScrollY > lastScrollY) {
+    nav.style.transform = "translateY(-100%)";
+  } else {
+    nav.style.transform = "translateY(0)";
+  }
+
+  lastScrollY = currentScrollY;
+});
+
 
 
 //  ======= CONTACT SECTION - MODAL WINDOW

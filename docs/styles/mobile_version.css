@@ -1,7 +1,8 @@
 @media (max-width: 780px) {
   .nav_links,
   .phone,
-  .tattoo-video-overlay, .cover_service_images {
+  .tattoo-video-overlay,
+  .cover_service_images {
     display: none;
   }
 
@@ -9,8 +10,14 @@
     font-size: 29px;
   }
 
-  .hero {
-    padding-top:5vh;
+  nav,
+  .about,
+  .artists,
+  .artists .card,
+  .contact,
+  .footer {
+    height: fit-content !important;
+    min-height: fit-content;
   }
 
   .start {
@@ -40,13 +47,20 @@
   }
 
   .about {
-    margin-top: -100% ;
-    height: fit-content;
+    margin-top: -100%;
   }
 
-  .about .title, .services .title, .artists .title, .contact .title, .faq .title {
-    font-size:32px;
+  .about .title,
+  .services .title,
+  .artists .title,
+  .faq .title {
+    font-size: 32px;
   }
+
+  .contact .title {
+    font-size: 24px;
+  }
+
 
   .about_row {
     display: flex;
@@ -60,7 +74,8 @@
     font-size: 150px;
   }
 
-  .about_description, .about_title {
+  .about_description,
+  .about_title {
     max-width: 80%;
   }
 
@@ -71,131 +86,151 @@
   .services .grid-container {
     width: 100% !important;
   }
-  
+
   .services .row {
     justify-content: space-between;
     width: 100%;
     padding: 5vh 4vw;
-}
-.services .row:hover {
-  background-color: #131212;
+  }
+  .services .row:hover {
+    background-color: #131212;
     padding: 5vh 4vw 7vh 4vw;
-}
+  }
 
-/* PROBLEMMMMMMMMM */
-.pricing {
+  /* PROBLEMMMMMMMMM */
+  .pricing {
     position: relative;
     top: 40px;
     left: -40vw;
-}
+  }
 
-.artists{
+  .artists {
     margin-top: 0;
-    height: fit-content;
-}  
+  }
 
-.artists .cards_cover {
-  flex-direction: column;
-}
+  .artists .cards_cover {
+    flex-direction: column;
+  }
 
-.artists .card {
-  margin-bottom: 5vh;
+  .artists .card {
+    margin-bottom: 5vh;
     padding: 5vh 4vw;
-    min-height: fit-content;
     width: 80%;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.621);
-}
+  }
 
-.artist_image {
-  text-align: center;
-  width: 70%;
-}
+  .artist_image {
+    text-align: center;
+    width: 70%;
+  }
 
-.cards_cover:has(.card:hover) .card {
+  .cards_cover:has(.card:hover) .card {
     filter: blur(0px) brightness(1);
-}
+  }
 
-.contact {
-  height: fit-content !important;
-  flex-direction: column;
-  margin-bottom: 20vh;
-}
+  .contact {
+    flex-direction: column;
+    margin-bottom: 20vh;
+  }
 
-.input_scope {
+  .input_scope {
     margin-right: 0vw;
     width: 80%;
     max-width: 100%;
-} 
+  }
 
-.send_button {
+  .send_button {
     font-size: 24px;
-}
+  }
 
-.hint {
+  .hint {
     font-size: 16px;
-}
+  }
 
-
-input {
+  input {
     font-size: 20px;
-}
+  }
 
-input::placeholder{
-  font-size: 20px;
-}
+  input::placeholder {
+    font-size: 20px;
+  }
 
-.faq_container {
-  flex-direction: column;
-}
+  .faq {
+    align-items: start;
+    justify-content: start;
+  }
 
-.right_container {
-  display: none;
-}
+  .faq_container {
+    flex-direction: column;
+    margin-left: 0;
+  }
 
-.left_container {
+  .right_container {
+    display: none;
     width: 100%;
-}
+    padding-left: 10vw;
+  }
 
-/* PROBLEMMMM */
-.question:hover {
-  padding-bottom: 10vh;
-}  
+  .left_container {
+    width: 100%;
+  }
 
-.footer {
-  height: fit-content;
-  flex-direction: column;
-  padding: 5vh 4vw;
+  /* PROBLEMMMM */
+  .question:hover {
+    padding-bottom: 10vh;
+  }
+
+  .footer {
+    flex-direction: column;
+    padding: 5vh 4vw;
     gap: 10vh;
     justify-content: start;
     align-items: start;
-}
+  }
 
-footer .logo{
+  footer .logo {
     text-transform: uppercase;
     font-size: 30px;
     font-weight: 500;
-}
+  }
 
-footer .logo_convert{
-  align-items: center;
-}  
-footer .logo_icon{
+  footer .logo_convert {
+    align-items: center;
+  }
+  footer .logo_icon {
     height: 100%;
     width: 10vw;
-}
+  }
 
-.footer_link {
+  .footer_link {
     font-size: 18px !important;
-}
+  }
 
-footer .subtitle {
+  footer .subtitle {
     text-transform: uppercase;
     font-size: 24px;
     margin-bottom: 2vh;
+  }
+
+  .contact_icon {
+    width: 50px;
+  }
+
+  nav.scrolled {
+    margin-left: -10vw;
+    background-color: #1c1c1ca7; 
+    backdrop-filter: blur(5px);
+      padding: 2vh 2vw;
+
+    width: 100%;
+    height: 15vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.696);
 }
 
-.contact_icon {
-   width: 50px;
+nav {
+  padding: 2vh 2vw;
+    display: fixed;
+    width: 100%;
+    height: 15vh;
 }
-
 }
