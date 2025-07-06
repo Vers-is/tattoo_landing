@@ -294,7 +294,7 @@
   }
 
   .services_title {
-    font-size: 20px;
+  font-size: clamp(16px, 4vw, 28px);
+}
 
-  }
 }
