@@ -292,4 +292,9 @@
   footer .logo {
     font-size: clamp(20px, 6vw, 32px);
   }
+
+  .services_title {
+    font-size: 20px;
+
+  }
 }
