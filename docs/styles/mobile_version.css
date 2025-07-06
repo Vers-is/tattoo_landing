@@ -7,10 +7,16 @@
     display: none;
   }
 
-  .hero .title {
-    font-size: clamp(20px, 5vw, 32px);
-    width: 80%;
-  }
+  .hero {
+  height: 130vh;
+  display: flex;
+}
+
+.hero .title {
+  font-size: clamp(36px, 7vw, 10vw) !important;
+  width: 100vw;
+}
+
 
   nav,
   .about,
