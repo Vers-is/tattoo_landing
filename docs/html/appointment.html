@@ -188,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+   // booking button 2
 document.querySelector('.link_cover2').addEventListener('click', e => {
     e.preventDefault();
 
@@ -209,6 +210,9 @@ document.querySelector('.link_cover2').addEventListener('click', e => {
       return;
     }
     
+
+    document.querySelector('#modal .modal-box p').textContent = 'Your data has been sent!';
+    document.getElementById('modal').classList.add('visible');
 
     // clean the form
     phoneInput.value = '';
