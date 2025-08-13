@@ -1,251 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bona Tattoo</title>
-  <link rel="stylesheet" href="../styles/main.css">
-  <link rel="stylesheet" href="../styles/appointment.css">
-  <script src="../node_modules/animejs/lib/anime.min.cjs" defer></script>
-  <script src="../app.js"></script>
-  <link rel="stylesheet" href="../styles/mobile_v_app.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bona Tattoo</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/appointment.css" />
+    <script src="../node_modules/animejs/lib/anime.min.cjs" defer></script>
+    <script src="../app.js"></script>
+    <link rel="stylesheet" href="../styles/mobile_v_app.css" />
+  </head>
+  <body>
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="../images/book_app_video.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="link_cover">
+      <img class="arrow_icon back" src="../icons/grey_arrow.svg" alt="" />
+      <a href="../index.html" class="link grey">back</a>
+    </div>
+    <div class="title">book an appointment</div>
 
-  <div class="video-background">
-    <video autoplay muted loop playsinline>
-      <source src="../images/book_app_video.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="link_cover">
-    <img class="arrow_icon back" src="../icons/grey_arrow.svg" alt="">
-    <a href="../index.html" class="link grey">back</a>
-  </div>
-  <div class="title">book an appointment</div>
-
-  <main>
-    <div class="left_container">
-      <input type="text" placeholder="Phone number" id="phoneInput">
-      <div id="phoneError" class="error-message"></div>
-      <div class="custom-select" id="serviceSelect">
-        <div class="current-cover" style="display: flex; justify-content: space-between; align-items: center;">
-          <div class="current">Service</div>
-          <img src="../icons/down_arrow.svg" alt="" class="arrow">
+    <main>
+      <div class="left_container">
+        <input type="text" placeholder="Phone number" id="phoneInput" />
+        <div id="phoneError" class="error-message"></div>
+        <div class="custom-select" id="serviceSelect">
+          <div
+            class="current-cover"
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            ">
+            <div class="current">Service</div>
+            <img src="../icons/down_arrow.svg" alt="" class="arrow" />
+          </div>
+          <ul class="options">
+            <li data-value="Tattoo">Tattoo</li>
+            <li data-value="Fixing">Fixing a Bad Tattoo</li>
+            <li data-value="Fixing">Cover up tattoo</li>
+            <li data-value="Fixing">Covering scars</li>
+            <li data-value="Fixing">Permanent makeup</li>
+            <li data-value="Fixing">Laser removal</li>
+          </ul>
         </div>
-        <ul class="options">
-          <li data-value="Tattoo">Tattoo</li>
-          <li data-value="Fixing">Fixing a Bad Tattoo</li>
-          <li data-value="Fixing">Cover up tattoo</li>
-          <li data-value="Fixing">Covering scars</li>
-          <li data-value="Fixing">Permanent makeup</li>
-          <li data-value="Fixing">Laser removal</li>
-        </ul>
-      </div>
-      <div class="custom-select" id="artistSelect">
-        <div class="current-cover" style="display: flex; justify-content: space-between; align-items: center;">
-          <div class="current">Artist</div>
-          <img src="../icons/down_arrow.svg" alt="" class="arrow">
+        <div class="custom-select" id="artistSelect">
+          <div
+            class="current-cover"
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            ">
+            <div class="current">Artist</div>
+            <img src="../icons/down_arrow.svg" alt="" class="arrow" />
+          </div>
+          <ul class="options">
+            <li data-value="Hector">Hector</li>
+            <li data-value="Natasha">Natasha</li>
+            <li data-value="Rob">Rob</li>
+            <li data-value="Kevin">Kevin</li>
+          </ul>
         </div>
-        <ul class="options">
-          <li data-value="Hector">Hector</li>
-          <li data-value="Natasha">Natasha</li>
-          <li data-value="Rob">Rob</li>
-          <li data-value="Kevin">Kevin</li>
-        </ul>
+
+        <div class="hint">
+          <span style="color: var(--green)">*</span> optional
+        </div>
+        <div class="description">
+          By sending this data you are agreeing to our Data Protection Statement
+        </div>
+        <div class="link_cover">
+          <a href="#" class="link green book-btn" id="book">book now</a>
+          <img class="arrow_icon" src="../icons/arrow.svg" alt="" />
+        </div>
       </div>
-      
-      <div class="hint"><span style="color:var(--green)">*</span> optional</div>
-      <div class="description">By sending this data you are agreeing to our Data Protection Statement</div>
-      <div class="link_cover">
-        <a href="#" class="link green" id="book">book now</a>
-        <img class="arrow_icon" src="../icons/arrow.svg" alt="">
+
+      <div class="right_container">
+        <div class="subtitle">select date</div>
+        <div
+          id="month-name"
+          style="color: grey; font-size: 18px; margin-bottom: 2vh"></div>
+        <div class="week">
+          <div class="day">
+            <span class="weekday"></span><span class="date"></span>
+          </div>
+          <div class="day">
+            <span class="weekday"></span><span class="date"></span>
+          </div>
+          <div class="day">
+            <span class="weekday"></span><span class="date"></span>
+          </div>
+          <div class="day">
+            <span class="weekday"></span><span class="date"></span>
+          </div>
+          <div class="day">
+            <span class="weekday"></span><span class="date"></span>
+          </div>
+          <div class="day">
+            <span class="weekday"></span><span class="date"></span>
+          </div>
+          <div class="day">
+            <span class="weekday"></span><span class="date"></span>
+          </div>
+        </div>
+        <div class="subtitle" style="margin-top: 10vh">select time</div>
+        <div class="time_cover">
+          <div class="time">10:00</div>
+          <div class="time">14:00</div>
+          <div class="time">18:00</div>
+        </div>
+      </div>
+      <div class="link_cover2">
+        <a href="#" class="link green book-btn" id="book2">book now</a>
+        <img class="arrow_icon" src="../icons/arrow.svg" alt="" />
+      </div>
+    </main>
+
+    <div id="modal">
+      <div class="modal-box">
+        <p>Your data has been sent!</p>
+        <button id="closeModal">OKAY</button>
       </div>
     </div>
 
-    <div class="right_container">
-      <div class="subtitle">select date</div>
-      <div id="month-name" style="color: grey; font-size: 18px; margin-bottom: 2vh;"></div>
-      <div class="week">
-        <div class="day"><span class="weekday"></span><span class="date"></span></div>
-        <div class="day"><span class="weekday"></span><span class="date"></span></div>
-        <div class="day"><span class="weekday"></span><span class="date"></span></div>
-        <div class="day"><span class="weekday"></span><span class="date"></span></div>
-        <div class="day"><span class="weekday"></span><span class="date"></span></div>
-        <div class="day"><span class="weekday"></span><span class="date"></span></div>
-        <div class="day"><span class="weekday"></span><span class="date"></span></div>
-      </div>
-      <div class="subtitle" style="margin-top: 10vh;">select time</div>
-      <div class="time_cover">
-        <div class="time">10:00</div>
-        <div class="time">14:00</div>
-        <div class="time">18:00</div>
-      </div>
-    </div>
-    <div class="link_cover2">
-        <a href="#" class="link green" id="book">book now</a>
-        <img class="arrow_icon" src="../icons/arrow.svg" alt="">
-      </div>
-  </main>
+    <script>
+      // === BOOK APPOINTMENT PAGE ==============
 
-  <div id="modal">
-    <div class="modal-box">
-      <p>Your data has been sent!</p>
-      <button id="closeModal">OKAY</button>
-    </div>
-  </div>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".custom-select").forEach((select) => {
+          const current = select.querySelector(".current-cover");
+          const optionsList = select.querySelector(".options");
+          const options = optionsList.querySelectorAll("li");
 
-  <script>
-    // === BOOK APPOINTMENT PAGE ==============
+          current.dataset.value = "";
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.custom-select').forEach(select => {
-    const current = select.querySelector('.current-cover');
-    const optionsList = select.querySelector('.options');
-    const options = optionsList.querySelectorAll('li');
+          current.addEventListener("click", (e) => {
+            e.stopPropagation();
+            select.classList.toggle("open");
+          });
 
-    current.dataset.value = '';
+          options.forEach((option) => {
+            option.addEventListener("click", (e) => {
+              e.stopPropagation();
+              current.textContent = option.textContent;
+              current.dataset.value = option.dataset.value;
+              select.classList.remove("open");
+            });
+          });
+        });
 
-    current.addEventListener('click', e => {
-      e.stopPropagation();
-      select.classList.toggle('open');
-    });
+        document.addEventListener("click", () => {
+          document.querySelectorAll(".custom-select.open").forEach((s) => {
+            s.classList.remove("open");
+          });
+        });
 
-    options.forEach(option => {
-      option.addEventListener('click', e => {
-        e.stopPropagation();
-        current.textContent = option.textContent;
-        current.dataset.value = option.dataset.value;
-        select.classList.remove('open');
+        // calendar
+        const days = [...document.querySelectorAll(".day")];
+        const months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "Augest",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        const weekDays = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+        let selectedDate = null;
+        let selectedTime = null;
+
+        // phone
+        const phoneInput = document.getElementById("phoneInput");
+        const phoneError = document.getElementById("phoneError");
+
+        function validatePhone(phone) {
+          const phoneRegex = /^[0-9]{10,15}$/;
+          return phoneRegex.test(phone);
+        }
+
+        // date
+        const now = new Date();
+        document.getElementById("month-name").textContent =
+          months[now.getMonth()];
+        days.forEach((el, i) => {
+          const d = new Date(now);
+          d.setDate(now.getDate() + i);
+          el.querySelector(".weekday").textContent = weekDays[d.getDay()];
+          el.querySelector(".date").textContent = d.getDate();
+          el.onclick = () => {
+            days.forEach((d) => d.classList.remove("selected"));
+            el.classList.add("selected");
+            selectedDate = `${d.getDate()} ${months[d.getMonth()]}`;
+          };
+        });
+
+        // time
+        const times = [...document.querySelectorAll(".time")];
+        times.forEach(
+          (el) =>
+            (el.onclick = () => {
+              times.forEach((t) => t.classList.remove("selected"));
+              el.classList.add("selected");
+              selectedTime = el.textContent;
+            })
+        );
+
+        // booking button
+        document.querySelectorAll(".book-btn").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const phone = phoneInput.value.trim();
+            const service = document.querySelector(
+              "#serviceSelect .current-cover"
+            ).dataset.value;
+            const artist = document.querySelector(
+              "#artistSelect .current-cover"
+            ).dataset.value;
+
+            if (!validatePhone(phone)) {
+              phoneError.textContent =
+                "Please enter a valid phone number (10-15 digits).";
+              phoneError.classList.add("visible");
+              return;
+            } else {
+              phoneError.classList.remove("visible");
+            }
+
+            if (!phone || !service || !selectedDate || !selectedTime) {
+              document.querySelector("#modal .modal-box p").textContent =
+                "Please fill in all required fields.";
+              document.getElementById("modal").classList.add("visible");
+              return;
+            }
+
+            document.querySelector("#modal .modal-box p").textContent =
+              "Your data has been sent!";
+            document.getElementById("modal").classList.add("visible");
+
+            // очистка формы
+            phoneInput.value = "";
+            document.querySelectorAll(".custom-select").forEach((sel) => {
+              const cur = sel.querySelector(".current-cover");
+              cur.textContent =
+                sel.id === "serviceSelect" ? "Service" : "Artist";
+              cur.dataset.value = "";
+            });
+            days.forEach((d) => d.classList.remove("selected"));
+            times.forEach((t) => t.classList.remove("selected"));
+            selectedDate = selectedTime = null;
+          });
+
+          // clean the form
+          phoneInput.value = "";
+          document.querySelectorAll(".custom-select").forEach((sel) => {
+            const cur = sel.querySelector(".current-cover");
+            cur.textContent = sel.id === "serviceSelect" ? "Service" : "Artist";
+            cur.dataset.value = "";
+          });
+          days.forEach((d) => d.classList.remove("selected"));
+          times.forEach((t) => t.classList.remove("selected"));
+          selectedDate = selectedTime = null;
+
+          document.getElementById("modal").classList.add("visible");
+        });
+
+        // closing modal window
+        document.getElementById("closeModal").onclick = () => {
+          document.getElementById("modal").classList.remove("visible");
+        };
+
+        // artist from URL
+        const params = new URLSearchParams(window.location.search);
+        const artistParam = params.get("artist") || params.get("Artist");
+        if (artistParam) {
+          const wrapper = document.querySelector("#artistSelect");
+          const option = wrapper.querySelector(
+            `.options li[data-value="${artistParam}"]`
+          );
+          if (option) {
+            const curCover = wrapper.querySelector(".current-cover");
+            curCover.textContent = option.textContent;
+            curCover.dataset.value = option.dataset.value;
+          }
+        }
       });
-    });
-  });
-
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.custom-select.open').forEach(s => {
-      s.classList.remove('open');
-    });
-  });
-
-  // calendar
-  const days = [...document.querySelectorAll('.day')];
-  const months = ['January','February','March','April','May','June','July','Augest','September','October','November','December'];
-  const weekDays = ['sun','mon','tue','wed','thu','fri','sat'];
-  let selectedDate = null;
-  let selectedTime = null;
-
-  // phone
-  const phoneInput = document.getElementById('phoneInput');
-  const phoneError = document.getElementById('phoneError');
-
-  function validatePhone(phone) {
-    const phoneRegex = /^[0-9]{10,15}$/;
-    return phoneRegex.test(phone);
-  }
-
-  // date
-  const now = new Date();
-  document.getElementById('month-name').textContent = months[now.getMonth()];
-  days.forEach((el, i) => {
-    const d = new Date(now);
-    d.setDate(now.getDate() + i);
-    el.querySelector('.weekday').textContent = weekDays[d.getDay()];
-    el.querySelector('.date').textContent = d.getDate();
-    el.onclick = () => {
-      days.forEach(d => d.classList.remove('selected'));
-      el.classList.add('selected');
-      selectedDate = `${d.getDate()} ${months[d.getMonth()]}`;
-    };
-  });
-
-  // time
-  const times = [...document.querySelectorAll('.time')];
-  times.forEach(el => el.onclick = () => {
-    times.forEach(t => t.classList.remove('selected'));
-    el.classList.add('selected');
-    selectedTime = el.textContent;
-  });
-
-  // booking button
-  document.getElementById('book').addEventListener('click', e => {
-    e.preventDefault();
-
-    const phone   = phoneInput.value.trim();
-    const service = document.querySelector('#serviceSelect .current-cover').dataset.value;
-    const artist  = document.querySelector('#artistSelect .current-cover').dataset.value;
-
-    if (!validatePhone(phone)) {
-      phoneError.textContent = 'Please enter a valid phone number (10-15 digits).';
-      phoneError.classList.add('visible');
-      return;
-    } else {
-      phoneError.classList.remove('visible');
-    }
-
-    if (!phone || !service || !selectedDate || !selectedTime) {
-      document.querySelector('#modal .modal-box p').textContent = 'Please fill in all required fields.';
-      document.getElementById('modal').classList.add('visible');
-      return;
-    }
-  });
-
-   // booking button 2
-document.querySelector('.link_cover2').addEventListener('click', e => {
-    e.preventDefault();
-
-    const phone   = phoneInput.value.trim();
-    const service = document.querySelector('#serviceSelect .current-cover').dataset.value;
-    const artist  = document.querySelector('#artistSelect .current-cover').dataset.value;
-
-    if (!validatePhone(phone)) {
-      phoneError.textContent = 'Please enter a valid phone number (10-15 digits).';
-      phoneError.classList.add('visible');
-      return;
-    } else {
-      phoneError.classList.remove('visible');
-    }
-
-    if (!phone || !service || !selectedDate || !selectedTime) {
-      document.querySelector('#modal .modal-box p').textContent = 'Please fill in all required fields.';
-      document.getElementById('modal').classList.add('visible');
-      return;
-    }
-    
-
-    document.querySelector('#modal .modal-box p').textContent = 'Your data has been sent!';
-    document.getElementById('modal').classList.add('visible');
-
-    // clean the form
-    phoneInput.value = '';
-    document.querySelectorAll('.custom-select').forEach(sel => {
-      const cur = sel.querySelector('.current-cover');
-      cur.textContent   = sel.id === 'serviceSelect' ? 'Service' : 'Artist';
-      cur.dataset.value = '';
-    });
-    days.forEach(d => d.classList.remove('selected'));
-    times.forEach(t => t.classList.remove('selected'));
-    selectedDate = selectedTime = null;
-
-    document.getElementById('modal').classList.add('visible');
-  });
-
-  // closing modal window
-  document.getElementById('closeModal').onclick = () => {
-    document.getElementById('modal').classList.remove('visible');
-  };
-
-  // artist from URL
-  const params      = new URLSearchParams(window.location.search);
-  const artistParam = params.get('artist') || params.get('Artist');
-  if (artistParam) {
-    const wrapper = document.querySelector('#artistSelect');
-    const option  = wrapper.querySelector(`.options li[data-value="${artistParam}"]`);
-    if (option) {
-      const curCover = wrapper.querySelector('.current-cover');
-      curCover.textContent   = option.textContent;
-      curCover.dataset.value = option.dataset.value;
-    }
-  }
-});
-  </script>
-</body>
+    </script>
+  </body>
 </html>

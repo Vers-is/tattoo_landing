@@ -28,30 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const questions = document.querySelectorAll('.question');
   const leftCont = document.querySelector('.left_container');
 
-  // 1) Сохраняем оригинальный текст
   answers.forEach(ans => {
     ans.dataset.originalText = ans.textContent.trim();
   });
 
-  // Функция сброса ответа
   function resetAnswer(el) {
-    // Останавливаем любые текущие анимации
     anime.remove(el.querySelectorAll('.char'));
-    // Восстанавливаем исходный текст
     el.innerHTML = el.dataset.originalText;
-    // Сбрасываем флаги
     el.classList.remove('active');
     delete el.dataset.animated;
   }
 
-  // Эффект печатания
   function typewriterEffect(el) {
-    // Если уже анимировали — не дублируем
     if (el.dataset.animated) return;
     el.dataset.animated = true;
 
     const text = el.dataset.originalText;
-    // Очищаем и строим спаны заново
     el.innerHTML = '';
     text.split(' ').forEach((word, wi) => {
       const w = document.createElement('span');
@@ -71,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Анимация
     anime.timeline({
       targets: el.querySelectorAll('.char'),
       easing: 'linear',
@@ -82,13 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Наведение на вопрос
   questions.forEach(q => {
     q.addEventListener('mouseenter', () => {
       const idx = q.dataset.index;
-      // Сброс всех
       answers.forEach(resetAnswer);
-      // Активируем нужный
       const ans = document.querySelector(`.answer[data-index="${idx}"]`);
       if (ans) {
         ans.classList.add('active');
